@@ -1,57 +1,299 @@
 ---
 title: "Week 12 Worklog"
-date: 2024-01-01
+date: 2026-07-10
 weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## Week 12 Objectives
 
-### Week 12 Objectives:
+* Complete the entire **AI AWS Architecture Reviewer** project.
+* Implement the remaining tasks planned in Week 11.
+* Complete the AI-based architecture diagram processing and evaluation workflow.
+* Test the entire system from the frontend to the backend.
+* Identify, fix, and optimize application issues.
+* Complete the architecture documentation, deployment guide, and user guide.
+* Summarize and monitor internship progress throughout the 12-week period.
+* Complete the internship assessment, evaluation, and confirmation forms.
+* Prepare the documents required for signatures and the official stamp from the internship organization.
+* Complete the internship and hand over the final project.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Tasks for This Week
 
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| 1 | Review the remaining tasks from Week 11 and prepare a project completion plan | 07/06/2026 | 07/06/2026 | |
+| 2 | Complete EventBridge, Step Functions, and the Lambda Diagram Extractor | 07/07/2026 | 07/07/2026 | https://docs.aws.amazon.com/eventbridge/ |
+| 3 | Connect the Lambda Diagram Extractor to Amazon Bedrock and store the results in DynamoDB | 07/08/2026 | 07/08/2026 | https://docs.aws.amazon.com/bedrock/ |
+| 4 | Complete the Review Progress and Report Detail pages and test the entire system | 07/09/2026 | 07/09/2026 | |
+| 5 | Complete the project documentation, assessment forms, progress tracking records, and internship completion documents | 07/10/2026 | 07/10/2026 | |
 
-### Week 12 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Results Achieved in Week 12
 
-* Successfully created and configured an AWS Free Tier account.
+### 1. Completion of the AI Processing Workflow
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Deployed Amazon EventBridge to detect events when a new architecture diagram is uploaded to the Amazon S3 Input Bucket.
+* Configured an EventBridge Rule for the `Object Created` event.
+* Connected EventBridge to AWS Step Functions.
+* Built a Step Functions State Machine to orchestrate the entire architecture review process.
+* Configured processing steps, status updates, retries, and error handling within the workflow.
+* Deployed the Lambda Diagram Extractor to read and process architecture diagrams from Amazon S3.
+* Configured IAM roles and the required permissions for Lambda, Step Functions, S3, DynamoDB, and Amazon Bedrock.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+Completed processing workflow:
 
-* Used AWS CLI to perform basic operations such as:
+```text
+Upload Diagram
+→ S3 Input Bucket
+→ EventBridge
+→ Step Functions
+→ Lambda Diagram Extractor
+→ Amazon Bedrock
+→ DynamoDB Review Result
+```
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+---
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### 2. Amazon Bedrock Integration
+
+* Enabled model access in Amazon Bedrock.
+* Connected the Lambda Diagram Extractor to Amazon Bedrock.
+* Developed a prompt for analyzing AWS architecture diagrams.
+* Applied the AWS Well-Architected Framework criteria to the evaluation process.
+* Processed the response returned by Amazon Bedrock in a structured format.
+* Stored AI-generated review results in Amazon DynamoDB.
+* Automatically updated the review status at each processing stage.
+
+The evaluation criteria include:
+
+```text
+Security
+Reliability
+Performance Efficiency
+Cost Optimization
+Operational Excellence
+Sustainability
+```
+
+The review output includes:
+
+```text
+Architecture Summary
+Detected AWS Services
+Detected Connections
+Security Assessment
+Reliability Assessment
+Performance Efficiency Assessment
+Cost Optimization Assessment
+Operational Excellence Assessment
+Sustainability Assessment
+Overall Score
+Risk Level
+Recommendations
+Priority Actions
+```
+
+---
+
+### 3. Completion of the Review Progress Tracking Feature
+
+* Completed the Review Progress page.
+* Connected the frontend to the API used to retrieve review statuses.
+* Displayed processing statuses in real time.
+* Updated the interface according to each status.
+
+Review status lifecycle:
+
+```text
+uploaded
+→ processing
+→ analyzed
+→ report_generated
+→ completed
+```
+
+Error status lifecycle:
+
+```text
+uploaded
+→ processing
+→ failed
+```
+
+* Added notifications for completed and failed reviews.
+* Verified that review statuses can be retrieved using the `reviewId`.
+
+---
+
+### 4. Completion of the Report Detail Page
+
+* Completed the page used to display architecture evaluation results.
+* Displayed an overview of the uploaded architecture diagram.
+* Displayed the detected AWS services.
+* Displayed evaluation scores for each criterion.
+* Displayed the risk level and issues requiring priority action.
+* Displayed improvement recommendations generated by Amazon Bedrock.
+* Connected DynamoDB data to the Report Detail interface.
+* Tested the function for reviewing completed reports.
+
+---
+
+### 5. Completion of the Report Generation and Storage Feature
+
+* Prepared the report generation function using AI review results.
+* Deployed the Lambda PDF Generator to process report data.
+* Configured an Amazon S3 Report Bucket to store generated reports.
+* Stored the report location in the review metadata.
+* Prepared a notification function for completed reports.
+* Configured Amazon SNS to send notifications.
+
+Report generation flow:
+
+```text
+DynamoDB Review Result
+→ Lambda PDF Generator
+→ S3 Report Bucket
+→ SNS Email Notification
+```
+
+---
+
+### 6. Complete System Testing
+
+* Tested the architecture diagram upload flow from the React frontend.
+* Confirmed that uploaded files were successfully stored in the Amazon S3 Input Bucket.
+* Confirmed that metadata was stored in DynamoDB.
+* Confirmed that EventBridge automatically triggered the workflow.
+* Confirmed that Step Functions correctly orchestrated the processing steps.
+* Tested the Lambda Diagram Extractor and its Amazon Bedrock integration.
+* Verified that AI review results were stored and displayed on the frontend.
+* Tested the Review History, Review Progress, and Report Detail pages.
+* Tested the report generation function.
+* Tested upload errors, processing errors, and API errors.
+* Resolved issues related to CORS, IAM permissions, API responses, and review statuses.
+* Completed end-to-end testing of the entire system.
+
+Complete project workflow:
+
+```text
+User
+→ CloudFront
+→ S3 React App
+→ API Gateway
+→ Lambda Upload Service
+→ S3 Input Bucket
+→ EventBridge
+→ Step Functions
+→ Lambda Diagram Extractor
+→ Amazon Bedrock
+→ DynamoDB
+→ Lambda PDF Generator
+→ S3 Report Bucket
+→ SNS Email Notification
+```
+
+---
+
+### 7. Project Completion and Handover
+
+* Reviewed the entire frontend and backend source code.
+* Reorganized the project folder structure.
+* Checked environment variables and configuration information.
+* Added instructions for installing, building, and deploying the application.
+* Completed the system architecture documentation.
+* Updated the final AWS architecture diagram.
+* Documented the completed functions and possible future improvements.
+* Handed over the source code, documentation, and deployment information.
+* Confirmed that the project operates according to the defined requirements.
+
+---
+
+### 8. Internship Progress Summary and Tracking
+
+* Reviewed all work completed from Week 1 to Week 12.
+* Summarized the tasks, results, and knowledge gained during each week.
+* Updated the internship progress tracking records.
+* Verified the start and completion dates of each task.
+* Compared the worklogs with the original internship plan.
+* Added any missing tasks to the progress report.
+* Organized the documents in chronological order.
+* Summarized the major achievements of the internship.
+
+---
+
+### 9. Completion of Internship Assessment Forms
+
+* Completed the required information in the internship organization assessment form.
+* Prepared the internship process evaluation form.
+* Prepared the internship progress tracking form.
+* Verified personal information, internship dates, and internship position.
+* Reviewed the comments, evaluations, and work results.
+* Completed the sections requiring confirmation from the internship supervisor.
+* Prepared the documents for signatures and the official stamp from the internship organization.
+* Reviewed the formatting before printing and submission.
+
+The prepared documents include:
+
+```text
+Internship Organization Assessment Form
+Internship Supervisor Evaluation Form
+Internship Progress Tracking Form
+Internship Worklogs from Week 1 to Week 12
+Final Internship Report
+Project Handover Information
+```
+
+---
+
+### 10. Completion of the Internship
+
+* Completed all assigned tasks during the internship.
+* Completed the AI AWS Architecture Reviewer project.
+* Handed over the project and its related documentation.
+* Completed the internship report and weekly worklogs.
+* Prepared all assessment and confirmation forms.
+* Obtained the required signatures and official stamp from the internship organization.
+* Reviewed all documents before submission.
+* Completed the internship according to the planned schedule.
+
+---
+
+## Self-Assessment
+
+* Completed the objectives defined for the project.
+* Improved my ability to deploy a full-stack application on AWS.
+* Gained a better understanding of serverless and event-driven architectures.
+* Gained a clear understanding of integrating Amazon S3, CloudFront, API Gateway, Lambda, and DynamoDB.
+* Gained a better understanding of EventBridge and Step Functions for workflow orchestration.
+* Developed the ability to integrate Amazon Bedrock into a practical application.
+* Improved my end-to-end testing and troubleshooting skills.
+* Improved my progress management and reporting skills.
+* Improved my technical documentation skills.
+* Gained experience in preparing internship assessment forms and completion documents.
+* Completed the internship on schedule.
+
+I am now able to:
+
+* Deploy a React frontend to Amazon S3 and CloudFront.
+* Develop a serverless backend using API Gateway and AWS Lambda.
+* Store files and data using Amazon S3 and DynamoDB.
+* Build automated workflows using EventBridge and Step Functions.
+* Integrate Amazon Bedrock to analyze architecture diagrams.
+* Track and update system processing statuses.
+* Test the complete application workflow.
+* Prepare and complete project handover documentation.
+* Summarize internship progress and results.
+* Prepare assessment documents and complete internship procedures.
+
+---
+
+## Conclusion
+
+During Week 12, the **AI AWS Architecture Reviewer** project was completed and fully tested. The core features, including diagram upload, automated processing, analysis using Amazon Bedrock, result storage, progress tracking, and report display, were integrated into a complete system.
+
+In addition to completing the project, the technical documentation, internship worklogs, assessment forms, and progress tracking records were fully prepared. The required documents were organized for signatures and the official stamp from the internship organization, completing the internship according to the planned schedule.
