@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 01/05/2026 to 01/07/2026
 
-![Your profile picture](/images/avatar1.png)
+![Your profile picture](/WorlBlog-template/images/avatar1.png)
 
 ### Report Content
 
