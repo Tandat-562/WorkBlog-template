@@ -105,7 +105,7 @@ Configure this in the AWS Console:
 
 After enabling this option, new object creation events in the bucket can be routed to EventBridge.
 
-![S3 EventBridge](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/s3-input-bucket-eventbridge.png)
+![S3 EventBridge](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/s3-input-bucket-eventbridge.png)
 
 </details>
 
@@ -179,7 +179,7 @@ After completing the configuration, choose:
 Next
 ```
 
-![EventBridge Rule](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/eventbridge-rule.png)
+![EventBridge Rule](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/eventbridge-rule.png)
 
 </details>
 
@@ -241,7 +241,7 @@ Example input received by Step Functions:
 
 This input allows the AI Analyzer Lambda to identify the correct bucket and object key to read the uploaded architecture diagram from S3.
 
-![EventBridge Target](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/eventbridge-target-step-functions.png)
+![EventBridge Target](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/eventbridge-target-step-functions.png)
 
 </details>
 
@@ -296,7 +296,7 @@ Generate the final review report, store the report in S3, and update the review 
 
 The workflow also includes a Choice state named `HasDetectedServices`. If the AI Analyzer does not detect any AWS service, the workflow skips the cost estimation step and moves directly to report generation with cost set to 0.
 
-![Step Functions](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/architecture-review-workflow.png)
+![Step Functions](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/architecture-review-workflow.png)
 
 </details>
 
@@ -411,7 +411,7 @@ EstimateCost
 GenerateReport
 ```
 
-![Step Functions Definition](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/step-functions-definition.png)
+![Step Functions Definition](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/step-functions-definition.png)
 
 </details>
 
@@ -500,7 +500,7 @@ You can test the Lambda with this sample event:
 }
 ```
 
-![AI Analyzer Lambda](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-ai-analyzer.png)
+![AI Analyzer Lambda](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-ai-analyzer.png)
 
 </details>
 
@@ -604,7 +604,7 @@ Default usage assumptions
 Cost optimization recommendations
 ```
 
-![Cost Tool Lambda](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-cost-tool.png)
+![Cost Tool Lambda](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-cost-tool.png)
 
 </details>
 
@@ -664,7 +664,7 @@ report.pdf:
 Stores the final PDF report for download or submission.
 ```
 
-![S3 Report Bucket](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/s3-report-bucket.png)
+![S3 Report Bucket](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/s3-report-bucket.png)
 
 </details>
 
@@ -780,7 +780,7 @@ You can test the Lambda with this sample event:
 
 The PDF Generator Lambda is the final state of the AI Workflow.
 
-![PDF Generator Lambda](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-pdf-generator.png)
+![PDF Generator Lambda](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/aws-reviewer-pdf-generator.png)
 
 </details>
 
@@ -966,7 +966,7 @@ Then choose:
 Create
 ```
 
-![ReportLab Layer](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/reportlab-layer.png)
+![ReportLab Layer](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/reportlab-layer.png)
 
 ##### 10.7. Attach the layer to the PDF Generator Lambda
 
@@ -1153,7 +1153,7 @@ Check this in DynamoDB:
 
 This update allows the React frontend to display review history and completed analysis results.
 
-![DynamoDB Updated Review](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/dynamodb-review-completed.png)
+![DynamoDB Updated Review](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/dynamodb-review-completed.png)
 
 </details>
 
@@ -1363,7 +1363,7 @@ EventBridge needs permission to start execution of the Step Functions state mach
 }
 ```
 
-![IAM Roles](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/ai-workflow-iam-roles.png)
+![IAM Roles](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/ai-workflow-iam-roles.png)
 
 </details>
 
@@ -1421,7 +1421,7 @@ GenerateReport
 
 If a state fails, open the `Input` and `Output` tabs of that state to inspect the input data and returned error.
 
-![Step Functions Success](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/step-functions-execution-success.png)
+![Step Functions Success](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/step-functions-execution-success.png)
 
 </details>
 
@@ -1476,7 +1476,7 @@ report.pdf:
 Stores the final PDF report, which can be downloaded or used in the demo result.
 ```
 
-![Generated Reports](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/s3-generated-reports.png)
+![Generated Reports](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/s3-generated-reports.png)
 
 </details>
 
@@ -1537,7 +1537,7 @@ updatedAt
 
 If the item is still in the `uploaded` state, check the CloudWatch Logs of the PDF Generator Lambda. Common causes are a missing `TABLE_NAME` environment variable or missing `dynamodb:UpdateItem` permission.
 
-![DynamoDB Completed Review](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/dynamodb-completed-review.png)
+![DynamoDB Completed Review](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/dynamodb-completed-review.png)
 
 </details>
 
@@ -1590,7 +1590,7 @@ Upload Backend → S3 Input Bucket → EventBridge → Step Functions
 → S3 Report Bucket → DynamoDB → Frontend Review History
 ```
 
-![Frontend Review History](//fcaj-workshop-template/images/5-Workshop/5.6-AI-workflow/frontend-review-history.png)
+![Frontend Review History](/WorkBlog-template/images/5-Workshop/5.6-AI-workflow/frontend-review-history.png)
 
 </details>
 
