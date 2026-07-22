@@ -1,0 +1,328 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="thienlh@thienlu.com"><link rel=icon href=/WorkBlog-template/images/favicon.png type=image/png><title>:: Internship Report</title>
+<link href=/WorkBlog-template/css/nucleus.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/fontawesome-all.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/hybrid.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/featherlight.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/perfect-scrollbar.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/auto-complete.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/atom-one-dark-reasonable.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/theme.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/hugo-theme.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/theme-workshop.css?1784692795 rel=stylesheet><script src=/WorkBlog-template/js/jquery-3.3.1.min.js?1784692795></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/WorkBlog-template/4-eventparticipated/4.1-event1/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/WorkBlog-template/js/lunr.min.js?1784692795></script><script type=text/javascript src=/WorkBlog-template/js/auto-complete.js?1784692795></script><script type=text/javascript>var baseurl="https://tandat-562.github.io/WorkBlog-template/"</script><script type=text/javascript src=/WorkBlog-template/js/search.js?1784692795></script></div><div class=highlightable><ul class=topics><li data-nav-id=/WorkBlog-template/1-worklog/ title=Worklog class=dd-item><a href=/WorkBlog-template/1-worklog/><b>1. </b>Worklog
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=/WorkBlog-template/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/2-proposal/ title=Proposal class=dd-item><a href=/WorkBlog-template/2-proposal/><b>2. </b>Proposal
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/3-blogsposted/ title="Blogs Posted" class=dd-item><a href=/WorkBlog-template/3-blogsposted/><b>3. </b>Blogs Posted
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/3-blogsposted/3.1-blog1/ title="[Cloud Architecture] Building a Microservices Architecture with Amazon SQS, Amazon SNS, and AWS Lambda" class=dd-item><a href=/WorkBlog-template/3-blogsposted/3.1-blog1/><b>3.1.</b>[Cloud Architecture] Building a Microservices Architecture with Amazon SQS, Amazon SNS, and AWS Lambda
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/3-blogsposted/3.2-blog2/ title="[Generative AI on AWS] Building AI AWS Architecture Reviewer – Automatically Reviewing AWS Architectures with Amazon Bedrock and Serverless" class=dd-item><a href=/WorkBlog-template/3-blogsposted/3.2-blog2/><b>3.2.</b>[Generative AI on AWS] Building AI AWS Architecture Reviewer – Automatically Reviewing AWS Architectures with Amazon Bedrock and Serverless
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/3-blogsposted/3.3-blog3/ title="[Amazon Bedrock AgentCore] Web Search: When AI Agents Are No Longer Limited by Knowledge Cutoff" class=dd-item><a href=/WorkBlog-template/3-blogsposted/3.3-blog3/><b>3.3.</b>[Amazon Bedrock AgentCore] Web Search: When AI Agents Are No Longer Limited by Knowledge Cutoff
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/5-workshop/ title=Workshop class=dd-item><a href=/WorkBlog-template/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/5-workshop/5.1-workshop-overview/ title="Workshop Overview" class=dd-item><a href=/WorkBlog-template/5-workshop/5.1-workshop-overview/><b>5.1. </b>Workshop Overview
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.2-prerequisite/ title=Prerequisite class=dd-item><a href=/WorkBlog-template/5-workshop/5.2-prerequisite/><b>5.2. </b>Prerequisite
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.3-frontend-hosting/ title="Deploy React Frontend with S3, CloudFront and AWS WAF" class=dd-item><a href=/WorkBlog-template/5-workshop/5.3-frontend-hosting/><b>5.3. </b>Deploy React Frontend with S3, CloudFront and AWS WAF
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.4-upload-backend/ title="Build Upload Backend with API Gateway, Lambda, S3, and DynamoDB" class=dd-item><a href=/WorkBlog-template/5-workshop/5.4-upload-backend/><b>5.4. </b>Build Upload Backend with API Gateway, Lambda, S3, and DynamoDB
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.5-review-api/ title="Integrate Review APIs and Frontend Pages" class=dd-item><a href=/WorkBlog-template/5-workshop/5.5-review-api/><b>5.5. </b>Integrate Review APIs and Frontend Pages
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.6-ai-workflow/ title="Build AI Workflow with EventBridge, Step Functions, Bedrock, and PDF Generator" class=dd-item><a href=/WorkBlog-template/5-workshop/5.6-ai-workflow/><b>5.6. </b>Build AI Workflow with EventBridge, Step Functions, Bedrock, and PDF Generator
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/5-workshop/5.7-monitoring-security/ title="Monitoring with CloudWatch, SNS Alert and IAM Least Privilege" class=dd-item><a href=/WorkBlog-template/5-workshop/5.7-monitoring-security/><b>5.7. </b>Monitoring with CloudWatch, SNS Alert and IAM Least Privilege
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/6-self-evaluation/ title=Self-Assessment class=dd-item><a href=/WorkBlog-template/6-self-evaluation/><b>6. </b>Self-Assessment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/7-feedback/ title="Feedback and Suggestions" class=dd-item><a href=/WorkBlog-template/7-feedback/><b>7. </b>Feedback and Suggestions
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/4-eventparticipated/ title class="dd-item
+parent"><a href=/WorkBlog-template/4-eventparticipated/><i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/4-eventparticipated/4.2-event2/ title="Mini Meetup – First Cloud AI Journey" class=dd-item><a href=/WorkBlog-template/4-eventparticipated/4.2-event2/><b>4.2. </b>Mini Meetup – First Cloud AI Journey
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/4-eventparticipated/4.1-event1/ title class="dd-item
+active"><a href=/WorkBlog-template/4-eventparticipated/4.1-event1/><i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/8-tailieuthamkhao/ title class=dd-item><a href=/WorkBlog-template/8-tailieuthamkhao/><i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://tandat-562.github.io/WorkBlog-template/4-eventparticipated/4.1-event1/ selected>English</option><option id=vi value=https://tandat-562.github.io/WorkBlog-template/vi/4-eventparticipated/4.1-event1/>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>22-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=/WorkBlog-template/>Internship Report</a> > <a href=/WorkBlog-template/4-eventparticipated/></a>></span></div><div class=progress><div class=wrapper><nav id=TableOfContents></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>---
+</span></span><span style=display:flex><span>title: &#34;AWS First Cloud AI Journey Community Day 2026&#34;
+</span></span><span style=display:flex><span>date: 2026-05-23
+</span></span><span style=display:flex><span>weight: 1
+</span></span><span style=display:flex><span>chapter: false
+</span></span><span style=display:flex><span>pre: &#34; &lt;<span style=color:#f92672>b</span>&gt; 4.1. &lt;/<span style=color:#f92672>b</span>&gt; &#34;
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Event Information
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>| Category | Details |
+</span></span><span style=display:flex><span>| --- | --- |
+</span></span><span style=display:flex><span>| Event name | AWS First Cloud AI Journey Community Day 2026 |
+</span></span><span style=display:flex><span>| Date | May 23, 2026 |
+</span></span><span style=display:flex><span>| Venue | 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Sai Gon Ward, Ho Chi Minh City |
+</span></span><span style=display:flex><span>| My role at the event | Attendee |
+</span></span><span style=display:flex><span>| Brief description of the main content and activities | The event was organized to share practical knowledge and experience related to AWS, cloud computing, and artificial intelligence. It included presentations from various speakers covering topics such as AI, Amazon Q, Amazon CloudFront, large language models, multi-agent systems, and product development during a hackathon. |
+</span></span><span style=display:flex><span>| Outcomes and value gained | By attending the event, I gained a more practical understanding of how AI and cloud technologies are applied in business environments. I also expanded my knowledge of Amazon Bedrock, Amazon Q, CloudFront, LLMs, multi-agent systems, teamwork, and the process of developing real-world technology products. |
+</span></span><span style=display:flex><span>| Significance of participating in the event | Participating in this event demonstrated my proactive attitude toward learning during my internship. It also allowed me to broaden my professional knowledge, strengthen my soft skills, and gain practical insights from the technology community. |
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Event Overview
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS Vietnam Community Day is a technology community event focusing on sharing new knowledge and practical experience related to AWS, cloud computing, and artificial intelligence. The event brought together several speakers who presented a wide range of topics.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Each presentation addressed a different aspect of modern technology, including context engineering for AI, the use of Amazon Q in enterprises, the capabilities of Amazon CloudFront, the non-deterministic behavior of large language models, and the implementation of multi-agent systems.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Through this event, I had the opportunity to understand more clearly how AI and cloud technologies are applied to real-world problems, particularly in enterprise environments and product development processes.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The main presentations included:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Context Is Everything** – analyzing the importance of context when working with AI.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Friendly AI Assistant with Amazon Q Suite** – introducing Amazon Q Suite for enterprise use.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **From Edge to Origin: CloudFront as Your Foundation** – explaining the role and extended capabilities of Amazon CloudFront.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **36 hrs with LotusHacks: Building UTMorpho** – sharing the experience of developing a product during a hackathon.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Non-Determinism of “Deterministic” LLM Settings** – explaining why LLMs may still generate different outputs under the same configuration.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Enterprise-Grade Multi-Agent System: Startup Credit Scoring** – introducing a multi-agent system designed to evaluate startup creditworthiness.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Event Objectives
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>The main objectives of the event were:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> To explore emerging trends in AI and cloud computing on AWS.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> To understand how AWS services are used to solve real-world problems.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> To expand participants’ knowledge of Amazon Bedrock, Amazon Q, CloudFront, and multi-agent systems.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> To learn from speakers and teams that have developed practical technology products.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> To gain additional ideas for applying AI to study, work, and personal projects.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Speakers and Main Topics
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 1. Tinh Truong – Context Is Everything
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Tinh Truong’s presentation focused on the factors that enable AI systems to generate more accurate and relevant answers. According to the speaker, although modern AI models have become highly capable, the quality of their outputs still depends significantly on the information and context provided by users.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>When a request is clearly written and supported by sufficient background information and specific objectives, the AI model has a stronger basis for producing an appropriate response. In contrast, short, vague, or overly general questions often result in answers that lack depth and relevance.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The speaker also introduced the idea of developing a system similar to a “second brain” for AI. Such a system would be able to store, retrieve, and reuse previously collected information, allowing AI to understand users more effectively and generate responses that are better suited to different situations.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 2. Hai Anh – Friendly AI Assistant with Amazon Q Suite
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Hai Anh’s presentation introduced <span style=font-weight:700>**Amazon Q Suite**</span>, a collection of artificial intelligence solutions developed by AWS to support enterprise activities.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Amazon Q can assist employees with various tasks, including searching for documents, summarizing information, creating content, taking meeting notes, drafting emails, and supporting data analysis.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>One significant advantage of Amazon Q is its ability to connect with multiple internal business data sources. This allows the system to generate responses based on the organization’s actual information rather than relying only on the general knowledge of an AI model.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>However, to deploy Amazon Q effectively, enterprises must also establish appropriate access control and data governance mechanisms. These controls help ensure that employees can only access information that is relevant to their responsibilities and level of authorization.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 3. Nguyen Tuan Thinh – CloudFront as Your Foundation
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>This was one of the more technically detailed presentations at the event, focusing on <span style=font-weight:700>**Amazon CloudFront**</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Before attending the presentation, I mainly understood CloudFront as a content delivery network used to improve website loading speed. However, the presentation helped me recognize that CloudFront can also serve as a foundational component for optimizing and protecting web systems.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>CloudFront can reduce the workload placed on origin servers, deliver content to users more quickly, help protect systems against distributed denial-of-service attacks, and contribute to the optimization of operating costs.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The presentation also introduced several related services and features, including AWS WAF, AWS Shield, Origin Shield, Signed URLs, and HTTP/3. Combining these capabilities can help a web system achieve better performance, security, and operational stability.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 4. Team VIB – 36 hrs with LotusHacks: Building UTMorpho
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Team VIB’s presentation described its experience participating in LotusHacks 2026 and developing a product called <span style=font-weight:700>**UTMorpho**</span> within 36 hours.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>At the beginning of the competition, the team did not have a clearly defined idea. After several discussions, the members decided to start with a real problem they had experienced in their daily work and develop a solution around it.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>One of the most notable aspects of the presentation was that it did not focus exclusively on technology. It also highlighted the importance of teamwork and coordination. During the development process, the team faced several difficulties, including excessive AI-generated content, token limitations, time pressure, and exhaustion as the final presentation approached.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Despite these challenges, the team successfully completed the product by dividing responsibilities and agreeing on a shared direction. From this experience, I learned that valuable ideas often come from real-world problems. I also realized that team alignment and cooperation are often more important than generating numerous ideas that cannot be implemented effectively.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 5. Duc Dao – Non-Determinism of “Deterministic” LLM Settings
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Duc Dao’s presentation discussed an important technical characteristic of large language models.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Many users assume that setting the temperature parameter to zero will always cause an AI model to generate exactly the same answer. However, the speaker demonstrated that this assumption is not entirely correct. In some situations, even when the prompt and configuration remain unchanged, the model may still produce different results.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>These variations can be caused by several technical factors, including floating-point calculations performed by GPUs, differences in processing order, request batching, and minor variations in the operating infrastructure.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>From this presentation, I learned that developers should not assume that an LLM will always generate identical results in every execution. Instead, systems should be designed to accept a reasonable level of variation and include appropriate evaluation, validation, or retry mechanisms when necessary.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 6. Vy Lam – Enterprise-Grade Multi-Agent System: Startup Credit Scoring
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Vy Lam’s presentation introduced a <span style=font-weight:700>**multi-agent system**</span> designed to support credit scoring for startup companies.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Evaluating the creditworthiness of a startup is often difficult because a newly established business may not have a complete credit history, substantial collateral, or stable revenue comparable to that of a long-established company.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>To address this challenge, the speaker proposed using multiple AI agents, with each agent responsible for analyzing a different category of information. For example, one agent may evaluate financial performance, another may analyze market conditions, and another may assess the capabilities of the founding team. Other agents may focus on risk and regulatory compliance.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>This model can be understood as a virtual credit assessment committee. Each agent acts as a specialist in a particular area, and their assessments are later combined to generate the final evaluation.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The presentation also emphasized that selecting a powerful AI model is only one part of deploying AI in an enterprise environment. The complete system must also include security, monitoring, data management, access control, and clear validation procedures.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Key Highlights
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### AI Quality Depends Heavily on Context
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>One idea repeated across several presentations was that the effectiveness of AI does not depend only on the power of the underlying model. The context, input data, and way in which users describe their requests also directly influence the quality of the generated responses.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>When users submit only a general question, AI may produce a broad answer that does not examine the topic in sufficient depth. In contrast, when users provide relevant data, clear objectives, supporting documents, and specific examples, the result is usually more accurate and useful.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Enterprise AI Requires Effective Control Mechanisms
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>The presentations on Amazon Q Suite and multi-agent systems demonstrated that implementing AI in an enterprise is much more complex than simply interacting with a chatbot.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>When integrating AI into actual business operations, enterprises need to determine:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Which data sources the system is permitted to use.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Who is authorized to access each category of information.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> How incorrect AI-generated outputs will be handled.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> How confidential and sensitive organizational data will be protected.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> How the system’s outputs can be monitored, traced, and evaluated.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>These elements are essential for ensuring that an AI system operates safely and remains aligned with organizational objectives.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### CloudFront Provides More Than CDN Functionality
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>The presentation on Amazon CloudFront helped me understand that this service is not limited to distributing content and improving page-loading speed.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>CloudFront can also reduce direct traffic to the origin server, strengthen system security, reduce the impact of cyberattacks, and improve the user experience across different geographical regions.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Therefore, CloudFront can be considered an important component in the architecture of web applications deployed on AWS.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### LLM Outputs May Vary Between Executions
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>The presentation on LLM non-determinism showed that AI models may generate different responses even when the input and configuration remain unchanged.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>This means that developers should implement methods for evaluating generated outputs rather than relying entirely on a single response. In some situations, the system may need to rerun the model, compare multiple outputs, or apply additional validation before making a decision.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Multi-Agent Systems Are Suitable for Complex Problems
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>For complex problems such as credit assessment, a single AI model may not be able to analyze every relevant factor comprehensively.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Dividing a large problem into smaller tasks and assigning each task to a specialized agent can make the process more structured. The final result can then be produced by combining multiple perspectives, improving both interpretability and decision support.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Main Lessons Learned
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 1. Providing Sufficient Context Improves AI Performance
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>When working with AI, users should not provide only a short request and expect the model to understand the entire problem automatically. Providing background information, objectives, relevant data, and specific requirements enables AI to generate more suitable responses.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 2. AI-Generated Results Must Be Reviewed
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AI can support people in completing many types of tasks, but its outputs should not automatically be considered completely accurate.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Human review remains especially important in high-risk areas such as finance, cybersecurity, and business decision-making. People must continue to evaluate the results and take responsibility for final decisions.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 3. AI and Cloud Computing Are Closely Connected
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>The presentations demonstrated that many modern AI applications are developed and operated using cloud computing platforms.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Services such as Amazon Bedrock, Amazon Q, CloudWatch, Amazon ECR, API Gateway, and CloudFront can be integrated to form a complete system. Together, they can support model development, API creation, application deployment, system monitoring, and security.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 4. Product Development Requires More Than Technical Skills
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>From Team VIB’s experience, I learned that building a product does not depend solely on programming ability.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>A development team must correctly understand the user’s problem, select an appropriate solution, manage its available time, coordinate among members, and prioritize the most important features within limited resources.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 5. Deploying AI to Production Requires Comprehensive Preparation
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>An AI product intended for real-world use must include supporting components such as security, monitoring, access management, output evaluation, and error handling.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>A system that performs well in a testing environment may not necessarily meet the requirements of actual users. Therefore, moving an AI application from a demonstration stage to production requires careful preparation.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Important Terminology
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Context Engineering
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Context engineering is the process of selecting, preparing, and organizing input information so that an AI system can clearly understand the request, relevant background, and intended objective.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Second AI Brain
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>A second AI brain refers to the idea of creating a system that can remember, store, search for, and reuse existing information to help AI generate more relevant responses.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Amazon Bedrock
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Amazon Bedrock is an AWS service that allows users to access and build applications with various generative AI foundation models without directly managing the underlying model infrastructure.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Amazon Q Suite
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Amazon Q Suite is a collection of AI assistant tools provided by AWS to support tasks and workflows within enterprise environments.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Amazon CloudFront
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Amazon CloudFront is AWS’s content delivery network service. It helps deliver content to users more quickly, reduces the workload on origin servers, and provides additional protection for applications.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### AWS WAF
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS WAF is a web application firewall service. It helps identify and block requests that appear dangerous or violate predefined security rules.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Multi-Agent System
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>A multi-agent system consists of multiple AI agents working together. Each agent is normally responsible for a specific task or area of analysis.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Guardrails
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Guardrails are rules and control layers designed to limit AI behavior, reduce inaccurate outputs, and prevent the exposure of sensitive information.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Prompt Injection
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Prompt injection is a type of attack in which malicious instructions are inserted into the input to manipulate an AI system or cause it to perform unintended actions.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Temperature
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Temperature is a parameter that affects the randomness and diversity of AI-generated content. Higher values usually produce more varied responses, while lower values generally guide the model toward more stable outputs.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Application to Study and Work
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>After participating in the event, I can apply the knowledge and experience gained in the following ways:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> When using AI, I will provide clearer context and more specific requirements instead of submitting short and incomplete questions.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> In AI projects, I will pay attention to data quality, security, access control, and output evaluation rather than focusing only on the model.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> When designing web applications on AWS, I will consider using CloudFront to improve access speed and strengthen system protection.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> During teamwork, I will prioritize identifying the actual problem before selecting technologies or developing solutions.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> When developing applications that use LLMs, I will remember that model outputs may vary and should be validated before use.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> When working on a large problem, I can divide it into smaller tasks and consider using multiple agents or processing stages.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## My Experience at the Event
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Attending AWS Vietnam Community Day gave me an opportunity to gain practical knowledge related to artificial intelligence and cloud computing.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The presentations did not only introduce services and technologies. They also demonstrated how these technologies are used in enterprises, product development processes, and situations involving real-world requirements.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>What impressed me most was that the current applications of AI have expanded far beyond basic question-and-answer interactions. AI can support internal information retrieval, data analysis, workflow automation, software development, and cooperation among multiple agents to solve complex problems.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>However, the event also helped me understand that AI should not be used in a completely uncontrolled manner. To use AI effectively, users need to describe their requirements clearly, provide appropriate data, and carefully review the outputs generated by the model.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In addition to knowledge about AI, the event gave me a broader understanding of the AWS ecosystem. Services such as Amazon Bedrock, Amazon Q, CloudFront, CloudWatch, API Gateway, and Amazon ECR have different functions, but they can be integrated to build and operate a modern technology system.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Lessons After the Event
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>After participating in the program, I identified several important lessons:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> AI requires sufficient context to generate high-quality responses.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> When developing an AI application, data and the way the model is used are just as important as the model’s capabilities.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> AI systems deployed in real environments require security, monitoring, and output control mechanisms.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Amazon CloudFront can simultaneously improve speed, scalability, and security for web systems.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> LLMs do not always generate identical results, even when the prompt and configuration remain unchanged.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Effective cooperation among team members plays an important role in product development.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Valuable solutions often begin with the identification of a genuine real-world problem.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Multi-agent systems are a suitable approach for problems involving multiple components and specialized analysis.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Conclusion
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS Vietnam Community Day was a valuable event for my learning and professional development. It helped me understand more clearly how AWS, cloud computing, and artificial intelligence are applied in real-world systems and business activities.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Through the presentations, I realized that AI is gradually becoming an important component of enterprise systems rather than being used only for experimentation or simple conversations.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>However, to implement AI effectively, organizations must prepare appropriate context, data, security measures, access controls, monitoring systems, and output validation methods. A powerful model alone is not sufficient to create an effective system without suitable operational and control components.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>The event also provided me with additional knowledge and ideas that can be applied to my studies and project development, particularly in areas related to Amazon Bedrock, Amazon Q, Amazon CloudFront, LLMs, and multi-agent systems.
+</span></span></code></pre></div><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/WorkBlog-template/4-eventparticipated/4.2-event2/ title="Mini Meetup – First Cloud AI Journey"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/WorkBlog-template/8-tailieuthamkhao/ title style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/WorkBlog-template/js/clipboard.min.js?1784692795></script><script src=/WorkBlog-template/js/perfect-scrollbar.min.js?1784692795></script><script src=/WorkBlog-template/js/perfect-scrollbar.jquery.min.js?1784692795></script><script src=/WorkBlog-template/js/jquery.sticky.js?1784692795></script><script src=/WorkBlog-template/js/featherlight.min.js?1784692795></script><script src=/WorkBlog-template/js/highlight.pack.js?1784692795></script><script>hljs.initHighlightingOnLoad()</script><script src=/WorkBlog-template/js/modernizr.custom-3.6.0.js?1784692795></script><script src=/WorkBlog-template/js/learn.js?1784692795></script><script src=/WorkBlog-template/js/hugo-learn.js?1784692795></script><link href=/WorkBlog-template/mermaid/mermaid.css?1784692795 rel=stylesheet><script src=/WorkBlog-template/mermaid/mermaid.js?1784692795></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>

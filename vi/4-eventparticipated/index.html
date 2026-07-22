@@ -1,0 +1,387 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="thienlh@thienlu.com"><link rel=icon href=/WorkBlog-template/images/favicon.png type=image/png><title>:: Báo cáo thực tập</title>
+<link href=/WorkBlog-template/css/nucleus.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/fontawesome-all.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/hybrid.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/featherlight.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/perfect-scrollbar.min.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/auto-complete.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/atom-one-dark-reasonable.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/theme.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/hugo-theme.css?1784692795 rel=stylesheet><link href=/WorkBlog-template/css/theme-workshop.css?1784692795 rel=stylesheet><script src=/WorkBlog-template/js/jquery-3.3.1.min.js?1784692795></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/WorkBlog-template/vi/4-eventparticipated/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/WorkBlog-template/js/lunr.min.js?1784692795></script><script type=text/javascript src=/WorkBlog-template/js/auto-complete.js?1784692795></script><script type=text/javascript>var baseurl="https://tandat-562.github.io/WorkBlog-template//vi"</script><script type=text/javascript src=/WorkBlog-template/js/search.js?1784692795></script></div><div class=highlightable><ul class=topics><li data-nav-id=/WorkBlog-template/vi/1-worklog/ title="Nhật ký công việc" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/><b>1. </b>Nhật ký công việc
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.11-week11/ title="Worklog tuần 11" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.11-week11/><b>1.11. </b>Worklog tuần 11
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.10-week10/ title="Worklog tuần 10" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.10-week10/><b>1.10. </b>Worklog tuần 10
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.9-week9/ title="Worklog tuần 9" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.9-week9/><b>1.9. </b>Worklog tuần 9
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.8-week8/ title="Worklog tuần 8" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.8-week8/><b>1.8. </b>Worklog tuần 8
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.7-week7/ title="Worklog tuần 7" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.7-week7/><b>1.7. </b>Worklog tuần 7
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.6-week6/ title="Worklog tuần 6" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.6-week6/><b>1.6. </b>Worklog tuần 6
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.5-week5/ title="Worklog tuần 5" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.5-week5/><b>1.5. </b>Worklog tuần 5
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.4-week4/ title="Worklog Tuần 4" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.4-week4/><b>1.4. </b>Worklog Tuần 4
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.3-week3/ title="Worklog Tuần 3" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.3-week3/><b>1.3. </b>Worklog Tuần 3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.2-week2/ title="Worklog tuần 2" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.2-week2/><b>1.2. </b>Worklog tuần 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.1-week1/ title="Worklog Tuần 1" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.1-week1/><b>1.1. </b>Worklog Tuần 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/1-worklog/1.12-week12/ title="Worklog Tuần 12" class=dd-item><a href=/WorkBlog-template/vi/1-worklog/1.12-week12/><b>1.12. </b>Worklog Tuần 12
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/vi/2-proposal/ title="Bản đề xuất" class=dd-item><a href=/WorkBlog-template/vi/2-proposal/><b>2. </b>Bản đề xuất
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/3-blogsposted/ title="Các bài blog đã đăng" class=dd-item><a href=/WorkBlog-template/vi/3-blogsposted/><b>3. </b>Các bài blog đã đăng
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/vi/3-blogsposted/3.1-blog1/ title="[Cloud Architecture] Xây dựng kiến trúc Microservices với Amazon SQS, Amazon SNS và AWS Lambda" class=dd-item><a href=/WorkBlog-template/vi/3-blogsposted/3.1-blog1/><b>3.1.</b>[Cloud Architecture] Xây dựng kiến trúc Microservices với Amazon SQS, Amazon SNS và AWS Lambda
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/3-blogsposted/3.2-blog2/ title="[Generative AI on AWS] Xây dựng AI AWS Architecture Reviewer – Tự động đánh giá kiến trúc AWS với Amazon Bedrock và Serverless" class=dd-item><a href=/WorkBlog-template/vi/3-blogsposted/3.2-blog2/><b>3.2.</b>[Generative AI on AWS] Xây dựng AI AWS Architecture Reviewer – Tự động đánh giá kiến trúc AWS với Amazon Bedrock và Serverless
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/3-blogsposted/3.3-blog3/ title="[Amazon Bedrock AgentCore] Web Search: Khi AI Agent không còn bị giới hạn bởi Knowledge Cutoff" class=dd-item><a href=/WorkBlog-template/vi/3-blogsposted/3.3-blog3/><b>3.3.</b>[Amazon Bedrock AgentCore] Web Search: Khi AI Agent không còn bị giới hạn bởi Knowledge Cutoff
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/ title=Workshop class=dd-item><a href=/WorkBlog-template/vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.1-workshop-overview/ title="Tổng quan Workshop" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.1-workshop-overview/><b>5.1. </b>Tổng quan Workshop
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.2-prerequisite/ title="Điều kiện chuẩn bị" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.2-prerequisite/><b>5.2. </b>Điều kiện chuẩn bị
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.3-frontend-hosting/ title="Triển khai React Frontend với S3, CloudFront và AWS WAF" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.3-frontend-hosting/><b>5.3. </b>Triển khai React Frontend với S3, CloudFront và AWS WAF
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.4-upload-backend/ title="Xây dựng Upload Backend với API Gateway, Lambda, S3 và DynamoDB" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.4-upload-backend/><b>5.4. </b>Xây dựng Upload Backend với API Gateway, Lambda, S3 và DynamoDB
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.5-review-api/ title="Tích hợp Review APIs và Frontend Pages" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.5-review-api/><b>5.5. </b>Tích hợp Review APIs và Frontend Pages
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.6-ai-workflow/ title="Xây dựng AI Workflow với EventBridge, Step Functions, Bedrock và PDF Generator" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.6-ai-workflow/><b>5.6. </b>Xây dựng AI Workflow với EventBridge, Step Functions, Bedrock và PDF Generator
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/5-workshop/5.7-monitoring-security/ title="Monitoring với CloudWatch, SNS Alert và IAM Least Privilege" class=dd-item><a href=/WorkBlog-template/vi/5-workshop/5.7-monitoring-security/><b>5.7. </b>Monitoring với CloudWatch, SNS Alert và IAM Least Privilege
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/WorkBlog-template/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=/WorkBlog-template/vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến" class=dd-item><a href=/WorkBlog-template/vi/7-feedback/><b>7. </b>Chia sẻ, đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/4-eventparticipated/ title class="dd-item
+active"><a href=/WorkBlog-template/vi/4-eventparticipated/><i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/WorkBlog-template/vi/4-eventparticipated/4.2-event2/ title="Mini Meetup – First Cloud AI Journey" class=dd-item><a href=/WorkBlog-template/vi/4-eventparticipated/4.2-event2/><b>4.2. </b>Mini Meetup – First Cloud AI Journey
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/WorkBlog-template/vi/4-eventparticipated/4.1-event1/ title class=dd-item><a href=/WorkBlog-template/vi/4-eventparticipated/4.1-event1/><i class="fas fa-check read-icon"></i></a></li></ul></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=http://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://tandat-562.github.io/WorkBlog-template/4-eventparticipated/>English</option><option id=vi value=https://tandat-562.github.io/WorkBlog-template/vi/4-eventparticipated/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>22-07-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=/WorkBlog-template/vi/>Báo cáo thực tập</a> ></span></div><div class=progress><div class=wrapper><nav id=TableOfContents></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>---
+</span></span><span style=display:flex><span>title: &#34;Mini Meetup – First Cloud AI Journey&#34;
+</span></span><span style=display:flex><span>date: 2026-06-06
+</span></span><span style=display:flex><span>weight: 2
+</span></span><span style=display:flex><span>chapter: false
+</span></span><span style=display:flex><span>pre: &#34; &lt;<span style=color:#f92672>b</span>&gt; 4.2. &lt;/<span style=color:#f92672>b</span>&gt; &#34;
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Thông Tin Sự Kiện
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>| Hạng mục | Nội dung |
+</span></span><span style=display:flex><span>| --- | --- |
+</span></span><span style=display:flex><span>| Tên sự kiện | Mini Meetup – First Cloud AI Journey |
+</span></span><span style=display:flex><span>| Thời gian | 06/06/2026 |
+</span></span><span style=display:flex><span>| Địa điểm | Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, Thành phố Hồ Chí Minh |
+</span></span><span style=display:flex><span>| Vai trò của em tại sự kiện | Người tham dự |
+</span></span><span style=display:flex><span>| Mô tả ngắn gọn về sự kiện | Mini Meetup – First Cloud AI Journey là một buổi chia sẻ công nghệ với nhiều chủ đề liên quan đến điện toán đám mây, an ninh mạng, DevOps, trí tuệ nhân tạo, hệ thống thời gian thực, kỹ năng làm việc nhóm và định hướng nghề nghiệp trong ngành công nghệ thông tin. Chương trình gồm sáu bài thuyết trình, trong đó mỗi diễn giả giới thiệu một chủ đề kỹ thuật hoặc nghề nghiệp khác nhau. |
+</span></span><span style=display:flex><span>| Kiến thức và giá trị đạt được | Qua sự kiện, em tiếp thu thêm nhiều kiến thức thực tế về Docker, containerization, AWS WAF, ứng dụng Machine Learning trong phát hiện tấn công mạng, phát triển ứng dụng thời gian thực với WebSocket, AWS Lambda, DynamoDB, GraphRAG và Amazon Neptune. Em cũng có thêm những góc nhìn hữu ích về làm việc nhóm, giao tiếp, định hướng nghề nghiệp và tầm quan trọng của việc xây dựng một portfolio thực tế. |
+</span></span><span style=display:flex><span>| Ý nghĩa của việc tham gia | Việc tham gia meetup giúp em mở rộng kiến thức ngoài phạm vi AI và điện toán đám mây. Sự kiện cũng giúp em hiểu rõ hơn về những kỹ năng kỹ thuật và kỹ năng mềm cần thiết để phát triển sự nghiệp trong lĩnh vực công nghệ thông tin. |
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Tổng Quan Sự Kiện
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Mini Meetup – First Cloud AI Journey là một buổi gặp gỡ cộng đồng được tổ chức nhằm chia sẻ kiến thức thực tế và kinh nghiệm nghề nghiệp trong nhiều lĩnh vực của ngành công nghệ thông tin.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Khác với những sự kiện chỉ tập trung vào một công nghệ cụ thể, buổi meetup này đề cập đến nhiều chủ đề đa dạng như containerization, bảo mật đám mây, Machine Learning, phát triển ứng dụng thời gian thực, làm việc nhóm, phát triển nghề nghiệp và các hệ thống truy xuất dữ liệu dựa trên knowledge graph.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Chương trình gồm sáu bài thuyết trình. Mỗi bài giới thiệu một chủ đề riêng và cung cấp các ví dụ thực tế từ dự án hoặc kinh nghiệm làm việc.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các chủ đề chính được trình bày tại meetup bao gồm:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Docker và containerization trong phát triển ứng dụng hiện đại.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Kết hợp AWS WAF với Machine Learning để phát hiện tấn công mạng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Phát triển game multiplayer thời gian thực bằng Godot và AWS WebSocket.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Cải thiện khả năng phối hợp và giao tiếp trong nhóm phát triển.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Hành trình nghề nghiệp từ IT Helpdesk đến Senior System Administrator.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Xây dựng ứng dụng GraphRAG với Amazon Neptune.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Thông qua các bài thuyết trình này, em có góc nhìn rộng hơn về cách nhiều công nghệ khác nhau có thể được kết hợp để phát triển, bảo mật và vận hành các hệ thống thông tin hiện đại.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Mục Tiêu Của Sự Kiện
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Buổi meetup hướng đến các mục tiêu sau:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Giới thiệu những công nghệ thực tế đang được sử dụng trong các dự án Cloud và phần mềm.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Giúp người tham dự hiểu được lợi ích của Docker và containerization.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Trình bày vai trò của AWS WAF và Machine Learning trong an ninh mạng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Minh họa cách các dịch vụ AWS hỗ trợ phát triển ứng dụng thời gian thực.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Chia sẻ những bài học thực tế về làm việc nhóm và giao tiếp.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Cung cấp định hướng nghề nghiệp cho sinh viên và những người mới bắt đầu trong ngành IT.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Giới thiệu GraphRAG và ứng dụng cơ sở dữ liệu đồ thị bằng Amazon Neptune.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Các Bài Thuyết Trình Và Chủ Đề Chính
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 1. Docker Và Containerization
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Một trong các bài thuyết trình giới thiệu về Docker và khái niệm containerization.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Docker cho phép lập trình viên đóng gói một ứng dụng cùng với thư viện, dependency và cấu hình môi trường chạy vào trong một container. Điều này giúp bảo đảm rằng ứng dụng có thể hoạt động ổn định và nhất quán trên nhiều môi trường khác nhau.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Nếu không sử dụng containerization, một ứng dụng có thể chạy đúng trên máy tính này nhưng gặp lỗi khi chuyển sang hệ thống khác do sự khác biệt về hệ điều hành, thư viện đã cài đặt hoặc cấu hình môi trường.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Docker giúp hạn chế vấn đề này bằng cách tạo ra một môi trường chuẩn hóa cho ứng dụng. Nhờ đó, lập trình viên có thể xây dựng, kiểm thử và triển khai phần mềm hiệu quả hơn.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình cũng giúp em hiểu thêm một số khái niệm quan trọng như Docker image, Docker container, Dockerfile, port, volume và container registry.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Qua chủ đề này, em nhận thấy Docker không chỉ là một công cụ phát triển mà còn là một thành phần quan trọng trong DevOps hiện đại và quá trình triển khai ứng dụng trên nền tảng đám mây.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 2. AWS WAF Và Machine Learning Trong Phát Hiện Tấn Công Mạng
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Một bài thuyết trình khác tập trung vào việc sử dụng <span style=font-weight:700>**AWS WAF**</span> kết hợp với Machine Learning để tăng cường bảo mật cho ứng dụng web.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>AWS WAF là một tường lửa ứng dụng web có khả năng kiểm tra các request gửi đến và chặn những lưu lượng phù hợp với các quy tắc bảo mật đã được thiết lập. Dịch vụ này có thể hỗ trợ bảo vệ ứng dụng khỏi những mối đe dọa phổ biến như bot độc hại, SQL injection, cross-site scripting và các mẫu lưu lượng bất thường.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Tuy nhiên, các hình thức tấn công mạng liên tục thay đổi và các quy tắc cố định không phải lúc nào cũng phát hiện được mọi hành vi đáng ngờ mới. Vì vậy, bài thuyết trình giới thiệu việc áp dụng Machine Learning để phân tích dữ liệu request và nhận diện các mẫu bất thường.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Mô hình Machine Learning có thể xem xét những yếu tố như tần suất gửi request, địa chỉ nguồn, hành vi truy cập và cấu trúc dữ liệu đầu vào bất thường. Khi phát hiện một request có dấu hiệu đáng ngờ, hệ thống có thể gửi cảnh báo hoặc áp dụng thêm các biện pháp bảo vệ.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình giúp em hiểu rằng các hệ thống an ninh mạng hiện đại thường kết hợp công cụ dựa trên quy tắc với phương pháp phát hiện dựa trên dữ liệu. AWS WAF cung cấp lớp bảo vệ ban đầu, trong khi Machine Learning có thể hỗ trợ nhận diện các hình thức tấn công phức tạp hoặc chưa từng xuất hiện trước đó.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 3. Xây Dựng Game Multiplayer Thời Gian Thực Bằng Godot Và AWS WebSocket
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Chủ đề kỹ thuật thứ ba giới thiệu một game multiplayer thời gian thực được phát triển bằng game engine Godot và các dịch vụ AWS.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các trò chơi thời gian thực yêu cầu dữ liệu được trao đổi liên tục giữa người chơi và máy chủ. Các request HTTP truyền thống có thể không phù hợp với yêu cầu này vì chúng thường hoạt động theo cơ chế gửi yêu cầu và nhận phản hồi.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>WebSocket tạo ra một kết nối hai chiều duy trì liên tục giữa client và server. Điều này cho phép dữ liệu được truyền ngay khi có một sự kiện xảy ra, chẳng hạn như khi người chơi di chuyển, thực hiện hành động hoặc làm thay đổi trạng thái của trò chơi.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Hệ thống được giới thiệu trong bài thuyết trình sử dụng một số dịch vụ AWS như:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **API Gateway WebSocket API** để duy trì kết nối thời gian thực.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **AWS Lambda** để xử lý các sự kiện và hành động trong game.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Amazon DynamoDB** để lưu thông tin kết nối và dữ liệu trò chơi.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> **Amazon CloudWatch** để theo dõi log và hoạt động của hệ thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình giúp em hiểu cách các dịch vụ serverless của AWS có thể được kết hợp để xây dựng một ứng dụng phản hồi người dùng theo thời gian thực.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Mặc dù ví dụ được sử dụng là một trò chơi multiplayer, kiến trúc tương tự cũng có thể được áp dụng cho ứng dụng trò chuyện, thông báo trực tiếp, nền tảng cộng tác trực tuyến, hệ thống theo dõi và dashboard thời gian thực.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 4. Làm Việc Nhóm Hiệu Quả Trong Các Dự Án Công Nghệ
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Bên cạnh kiến thức kỹ thuật, buổi meetup còn có một bài thuyết trình về kỹ năng làm việc nhóm.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các dự án công nghệ thường yêu cầu nhiều người với các vai trò khác nhau cùng phối hợp, bao gồm lập trình viên, nhà thiết kế, kiểm thử viên, quản lý dự án và kỹ sư Cloud. Ngay cả khi mỗi thành viên đều có kỹ năng chuyên môn tốt, dự án vẫn có thể gặp khó khăn nếu quá trình giao tiếp và phối hợp không hiệu quả.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Diễn giả nhấn mạnh một số yếu tố quan trọng để làm việc nhóm thành công:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Phân chia trách nhiệm rõ ràng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Thường xuyên trao đổi về tiến độ và khó khăn.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Lắng nghe ý kiến của các thành viên khác.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Đưa ra phản hồi mang tính xây dựng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Chia sẻ thông tin và tài liệu.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Tập trung vào mục tiêu chung của dự án.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Giải quyết bất đồng một cách chuyên nghiệp.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình giúp em nhận ra rằng năng lực kỹ thuật không phải là yếu tố duy nhất quyết định sự thành công của một dự án. Các thành viên còn cần có kỹ năng giao tiếp, tinh thần trách nhiệm, sự linh hoạt và tôn trọng lẫn nhau.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 5. Từ IT Helpdesk Đến Senior System Administrator
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Một bài thuyết trình chia sẻ về hành trình nghề nghiệp của diễn giả, bắt đầu từ vị trí IT Helpdesk và phát triển lên Senior System Administrator.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Diễn giả cho biết công việc IT Helpdesk có thể tạo nền tảng tốt cho sự nghiệp trong ngành IT. Nhân viên Helpdesk thường xuyên gặp các vấn đề liên quan đến hệ điều hành, mạng máy tính, tài khoản người dùng, phần mềm, phần cứng và an toàn thông tin.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Thông qua việc xử lý những vấn đề này, họ có thể dần phát triển kỹ năng troubleshooting và hiểu rõ hơn về cách hệ thống công nghệ thông tin trong doanh nghiệp vận hành.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Để phát triển lên vị trí quản trị hệ thống, người làm IT cần tiếp tục bổ sung kiến thức ở những lĩnh vực như:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Mạng máy tính.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Hệ điều hành Windows và Linux.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Quản trị máy chủ.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Công nghệ ảo hóa.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Điện toán đám mây.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> An ninh mạng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Tự động hóa và scripting.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Giám sát và sao lưu hệ thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình cũng nhấn mạnh rằng phát triển nghề nghiệp là một quá trình lâu dài. Người làm công nghệ cần liên tục học hỏi, tích lũy kinh nghiệm, ghi lại quá trình làm việc và sẵn sàng đảm nhận những trách nhiệm ngày càng phức tạp hơn.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Qua bài chia sẻ, em hiểu rằng một vị trí khởi đầu vẫn có thể trở thành nền tảng quan trọng nếu mỗi người có kế hoạch học tập rõ ràng và tinh thần cầu tiến.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 6. GraphRAG Với Amazon Neptune
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Chủ đề lớn cuối cùng giới thiệu về <span style=font-weight:700>**GraphRAG**</span> và cách triển khai với <span style=font-weight:700>**Amazon Neptune**</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các hệ thống Retrieval-Augmented Generation truyền thống thường tìm kiếm các đoạn văn bản dựa trên mức độ tương đồng ngữ nghĩa. Phương pháp này hữu ích nhưng có thể chưa thể hiện đầy đủ mối quan hệ giữa các thực thể khác nhau.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>GraphRAG kết hợp mô hình ngôn ngữ lớn với dữ liệu dạng đồ thị. Trong cơ sở dữ liệu đồ thị, thông tin được biểu diễn bằng các node và relationship. Ví dụ, một graph có thể kết nối khách hàng, sản phẩm, doanh nghiệp, giao dịch, tài liệu và địa điểm.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Amazon Neptune là dịch vụ cơ sở dữ liệu đồ thị được quản lý hoàn toàn bởi AWS. Dịch vụ này hỗ trợ các ứng dụng cần lưu trữ và truy vấn những dữ liệu có nhiều mối liên kết.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Khi sử dụng Amazon Neptune trong hệ thống GraphRAG, ứng dụng không chỉ truy xuất từng thông tin riêng lẻ mà còn có thể tìm ra mối quan hệ giữa chúng. Điều này hỗ trợ hệ thống AI trả lời những câu hỏi cần nhiều bước suy luận.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Ví dụ, thay vì chỉ tìm một tài liệu có chứa tên của một người, hệ thống còn có thể xác định tổ chức, dự án, đồng nghiệp và các tài liệu liên quan đến người đó.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Bài thuyết trình giúp em hiểu rằng GraphRAG có thể cải thiện khả năng truy xuất và suy luận của các ứng dụng AI, đặc biệt khi dữ liệu nền chứa nhiều mối quan hệ quan trọng.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Những Điểm Nổi Bật
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Containerization Giúp Ứng Dụng Hoạt Động Nhất Quán
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Docker giúp đóng gói ứng dụng cùng với các dependency vào những container được chuẩn hóa. Điều này làm giảm sự khác biệt giữa môi trường phát triển, kiểm thử và production.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Nhờ đó, các nhóm có thể triển khai ứng dụng ổn định hơn và hạn chế các lỗi liên quan đến cấu hình.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### An Ninh Mạng Cần Nhiều Lớp Bảo Vệ
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Bài thuyết trình về AWS WAF cho thấy bảo mật không nên phụ thuộc vào một công cụ duy nhất.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các quy tắc bảo mật có thể ngăn chặn những mẫu tấn công đã biết, trong khi Machine Learning có thể hỗ trợ phát hiện các hành vi bất thường. Việc kết hợp hai phương pháp sẽ tạo ra một hệ thống bảo mật linh hoạt và hiệu quả hơn.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### AWS Hỗ Trợ Xây Dựng Ứng Dụng Serverless Thời Gian Thực
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Ví dụ về game multiplayer cho thấy API Gateway WebSocket, Lambda và DynamoDB có thể được kết hợp để xây dựng ứng dụng thời gian thực mà không cần duy trì máy chủ truyền thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Kiến trúc này có thể tự động mở rộng theo nhu cầu và được áp dụng cho nhiều loại ứng dụng tương tác khác nhau.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Làm Việc Nhóm Ảnh Hưởng Trực Tiếp Đến Kết Quả Dự Án
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Kiến thức kỹ thuật tốt không đồng nghĩa với việc dự án chắc chắn thành công. Giao tiếp kém, trách nhiệm không rõ ràng và tài liệu không đầy đủ có thể gây ra sự chậm trễ và hiểu lầm.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Làm việc nhóm hiệu quả đòi hỏi trao đổi thường xuyên, phân công nhiệm vụ rõ ràng và cùng cam kết với mục tiêu chung của dự án.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Phát Triển Nghề Nghiệp Đòi Hỏi Học Tập Liên Tục
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Hành trình từ IT Helpdesk đến Senior System Administrator cho thấy sự phát triển nghề nghiệp diễn ra từng bước theo thời gian.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Kinh nghiệm thực tế, tự học, chứng chỉ chuyên môn, dự án cá nhân và một portfolio tốt đều có thể hỗ trợ quá trình phát triển sự nghiệp lâu dài.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### GraphRAG Cải Thiện Khả Năng Truy Xuất Dựa Trên Mối Quan Hệ
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>GraphRAG đặc biệt hữu ích với những câu hỏi đòi hỏi hệ thống phải hiểu mối liên hệ giữa nhiều thông tin khác nhau.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Thông qua việc kết hợp dữ liệu đồ thị với mô hình ngôn ngữ, hệ thống có thể truy xuất thông tin một cách có hệ thống hơn và đưa ra câu trả lời có bối cảnh rõ ràng hơn.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Những Bài Học Quan Trọng
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 1. Docker Là Công Cụ Quan Trọng Trong Phát Triển Hiện Đại
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Docker giúp tạo ra môi trường hoạt động ổn định và có thể tái sử dụng cho ứng dụng. Công cụ này cũng hỗ trợ quá trình cộng tác giữa các nhóm phát triển và đơn giản hóa việc triển khai phần mềm.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 2. Bảo Mật Cần Được Tính Đến Ngay Từ Đầu
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Bảo mật không nên chỉ được xem là một bước bổ sung sau khi ứng dụng đã hoàn thiện.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các dịch vụ như AWS WAF, hệ thống giám sát, quản lý quyền truy cập và phương pháp phát hiện bằng Machine Learning cần được cân nhắc ngay trong giai đoạn thiết kế hệ thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 3. Dịch Vụ Serverless Có Thể Hỗ Trợ Hệ Thống Thời Gian Thực
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS Lambda, API Gateway WebSocket và DynamoDB có thể được kết hợp để xây dựng các ứng dụng thời gian thực có khả năng mở rộng.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Cách tiếp cận này cho phép nhóm phát triển tập trung nhiều hơn vào logic ứng dụng thay vì phải dành nhiều thời gian quản lý máy chủ.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 4. Giao Tiếp Là Một Kỹ Năng Nghề Nghiệp Quan Trọng
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Trong các dự án công nghệ, giao tiếp rõ ràng cũng quan trọng như việc hoàn thành nhiệm vụ kỹ thuật.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các thành viên cần biết cách giải thích vấn đề, cập nhật tiến độ, viết tài liệu và phối hợp trách nhiệm một cách hiệu quả.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 5. Portfolio Thực Tế Hỗ Trợ Phát Triển Nghề Nghiệp
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Một portfolio gồm dự án, tài liệu, source code và thành tích kỹ thuật có thể thể hiện năng lực thực tế của ứng viên rõ hơn so với việc chỉ liệt kê tên các công nghệ.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các dự án cá nhân cũng tạo cơ hội để người học áp dụng kiến thức lý thuyết vào những vấn đề thực tế.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### 6. Cơ Sở Dữ Liệu Đồ Thị Phù Hợp Với Dữ Liệu Có Nhiều Mối Liên Hệ
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Cơ sở dữ liệu đồ thị phù hợp với những bài toán mà mối quan hệ giữa các thực thể đóng vai trò quan trọng.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Khi kết hợp với RAG và mô hình ngôn ngữ lớn, cơ sở dữ liệu đồ thị có thể hỗ trợ khả năng tìm kiếm và suy luận nâng cao.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Các Thuật Ngữ Quan Trọng
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Docker
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Docker là nền tảng được sử dụng để đóng gói và chạy ứng dụng bên trong container.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Container
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Container là một môi trường nhẹ và độc lập, bao gồm ứng dụng cùng các dependency cần thiết để ứng dụng hoạt động.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Docker Image
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Docker image là một mẫu có thể tái sử dụng để tạo ra container.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Dockerfile
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Dockerfile chứa các chỉ dẫn dùng để xây dựng một Docker image.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### AWS WAF
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS WAF là tường lửa ứng dụng web giúp bảo vệ ứng dụng khỏi các request độc hại và những cuộc tấn công mạng phổ biến.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Phát Hiện Dựa Trên Machine Learning
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Phát hiện dựa trên Machine Learning sử dụng dữ liệu và mô hình đã được huấn luyện để nhận diện hành vi bất thường hoặc mối đe dọa tiềm ẩn.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### WebSocket
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>WebSocket là một giao thức truyền thông tạo ra kết nối hai chiều liên tục giữa client và server.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### AWS Lambda
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>AWS Lambda là dịch vụ điện toán serverless cho phép chạy code khi có sự kiện xảy ra mà không yêu cầu người dùng quản lý máy chủ.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Amazon DynamoDB
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Amazon DynamoDB là dịch vụ cơ sở dữ liệu NoSQL được quản lý hoàn toàn, phù hợp với các ứng dụng yêu cầu độ trễ thấp và khả năng mở rộng cao.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Amazon Neptune
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Amazon Neptune là dịch vụ cơ sở dữ liệu đồ thị được quản lý, dùng để lưu trữ và truy vấn dữ liệu có nhiều mối liên kết.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### GraphRAG
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>GraphRAG là phương pháp kết hợp truy xuất thông tin dựa trên graph với mô hình ngôn ngữ lớn để tạo ra câu trả lời dựa trên cả dữ liệu và mối quan hệ giữa dữ liệu.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### DevOps
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>DevOps là tập hợp các phương pháp kết hợp phát triển phần mềm với vận hành hệ thống nhằm cải thiện quá trình phân phối ứng dụng và độ tin cậy của hệ thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Áp Dụng Vào Học Tập Và Công Việc
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Sau khi tham gia meetup, em có thể áp dụng những kiến thức đã học theo một số cách sau:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Sử dụng Docker để tạo môi trường phát triển nhất quán cho dự án cá nhân và dự án nhóm.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Học cách viết Dockerfile và quản lý container image hiệu quả hơn.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Cân nhắc sử dụng các dịch vụ bảo mật như AWS WAF ngay từ giai đoạn thiết kế ứng dụng web.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Tìm hiểu cách Machine Learning hỗ trợ phát hiện lưu lượng bất thường và các mối đe dọa an ninh mạng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Sử dụng API Gateway WebSocket, Lambda và DynamoDB để thử nghiệm xây dựng ứng dụng thời gian thực.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Cải thiện kỹ năng giao tiếp và phối hợp công việc khi làm việc nhóm.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Xây dựng các dự án thực tế và ghi lại quá trình thực hiện trong portfolio nghề nghiệp.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Tìm hiểu Amazon Neptune và GraphRAG cho các ứng dụng AI có dữ liệu liên kết.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Trải Nghiệm Khi Tham Gia Sự Kiện
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Việc tham gia Mini Meetup – First Cloud AI Journey giúp em có cơ hội tiếp cận nhiều lĩnh vực công nghệ khác nhau trong cùng một sự kiện.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các bài thuyết trình kết hợp giữa kiến thức kỹ thuật, kinh nghiệm triển khai dự án và tư vấn nghề nghiệp. Điều này khiến sự kiện không chỉ hữu ích cho việc học về các dịch vụ AWS mà còn giúp em hiểu thêm cách những người làm công nghệ phát triển sự nghiệp.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Chủ đề mà em cảm thấy đặc biệt thú vị là việc sử dụng dịch vụ AWS WebSocket để xây dựng một game multiplayer thời gian thực. Nội dung này cho thấy cách các dịch vụ Cloud có thể được tích hợp để xử lý sự kiện người dùng nhanh chóng mà không cần phụ thuộc vào kiến trúc máy chủ truyền thống.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Em cũng quan tâm đến bài thuyết trình về AWS WAF và Machine Learning. Bài chia sẻ cho thấy trí tuệ nhân tạo không chỉ được sử dụng cho chatbot hoặc tạo nội dung mà còn có thể áp dụng trong an ninh mạng và phát hiện mối đe dọa.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Các nội dung về làm việc nhóm và phát triển nghề nghiệp cũng mang lại nhiều giá trị. Những bài chia sẻ này giúp em hiểu rằng để phát triển lâu dài trong ngành IT, kiến thức kỹ thuật là chưa đủ. Kỹ năng giao tiếp, hợp tác, học tập liên tục, kinh nghiệm thực tế và định hướng nghề nghiệp cũng có vai trò quan trọng.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Bài Học Sau Sự Kiện
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Sau khi tham gia meetup, em rút ra được những bài học chính sau:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Docker giúp ứng dụng hoạt động nhất quán trên nhiều môi trường khác nhau.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Containerization là một phần quan trọng của phát triển phần mềm hiện đại và DevOps.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> AWS WAF có thể tạo ra một lớp bảo mật hiệu quả cho ứng dụng web.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Machine Learning có thể hỗ trợ phát hiện lưu lượng bất thường và độc hại.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> WebSocket phù hợp với các ứng dụng yêu cầu truyền dữ liệu liên tục theo thời gian thực.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Các dịch vụ serverless của AWS có thể được kết hợp để xây dựng hệ thống thời gian thực có khả năng mở rộng.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Làm việc nhóm hiệu quả yêu cầu giao tiếp rõ ràng và phân chia trách nhiệm cụ thể.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Phát triển nghề nghiệp trong ngành IT đòi hỏi quá trình học tập liên tục và tích lũy kinh nghiệm thực tế.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Một portfolio tốt có thể thể hiện năng lực kỹ thuật và khả năng giải quyết vấn đề.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> GraphRAG và Amazon Neptune phù hợp với các ứng dụng AI có dữ liệu chứa nhiều mối liên kết.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Kết Luận
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>Mini Meetup – First Cloud AI Journey là một sự kiện hữu ích, giúp em mở rộng hiểu biết về điện toán đám mây, an ninh mạng, DevOps, hệ thống thời gian thực, trí tuệ nhân tạo và phát triển nghề nghiệp.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Thông qua sáu bài thuyết trình, em hiểu thêm cách Docker hỗ trợ triển khai ứng dụng, cách AWS WAF và Machine Learning có thể được sử dụng để phát hiện các cuộc tấn công mạng, cũng như cách các dịch vụ AWS được kết hợp để xây dựng ứng dụng thời gian thực.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Sự kiện còn giới thiệu GraphRAG và Amazon Neptune, giúp em có thêm góc nhìn mới về cách hệ thống AI truy xuất và phân tích mối quan hệ giữa các dữ liệu.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Ngoài kiến thức kỹ thuật, meetup cũng nhấn mạnh tầm quan trọng của làm việc nhóm, giao tiếp, học tập liên tục và xây dựng portfolio thực tế. Những bài học này sẽ giúp em cải thiện cả năng lực chuyên môn và quá trình chuẩn bị cho sự nghiệp trong lĩnh vực công nghệ thông tin.
+</span></span></code></pre></div><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/WorkBlog-template/vi/7-feedback/ title="Chia sẻ, đóng góp ý kiến"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/WorkBlog-template/vi/4-eventparticipated/4.2-event2/ title="Mini Meetup – First Cloud AI Journey" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/WorkBlog-template/js/clipboard.min.js?1784692796></script><script src=/WorkBlog-template/js/perfect-scrollbar.min.js?1784692796></script><script src=/WorkBlog-template/js/perfect-scrollbar.jquery.min.js?1784692796></script><script src=/WorkBlog-template/js/jquery.sticky.js?1784692796></script><script src=/WorkBlog-template/js/featherlight.min.js?1784692796></script><script src=/WorkBlog-template/js/highlight.pack.js?1784692796></script><script>hljs.initHighlightingOnLoad()</script><script src=/WorkBlog-template/js/modernizr.custom-3.6.0.js?1784692796></script><script src=/WorkBlog-template/js/learn.js?1784692796></script><script src=/WorkBlog-template/js/hugo-learn.js?1784692796></script><link href=/WorkBlog-template/mermaid/mermaid.css?1784692796 rel=stylesheet><script src=/WorkBlog-template/mermaid/mermaid.js?1784692796></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>
