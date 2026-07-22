@@ -1,6 +1,6 @@
 ---
 title: "Monitoring với CloudWatch, SNS Alert và IAM Least Privilege"
-date: 2026-07-03
+date: 2026-07-09
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "

@@ -14,6 +14,14 @@ Trong workshop này, AWS Region chính được sử dụng cho các backend ser
 Asia Pacific (Singapore) - ap-southeast-1
 ```
 
+Đối với Amazon CloudFront và AWS WAF gắn với CloudFront distribution, phạm vi sử dụng là:
+
+```text
+CloudFront (Global)
+```
+
+---
+
 #### Công cụ cần chuẩn bị
 
 Trước khi bắt đầu workshop này, hãy đảm bảo các công cụ sau đã được cài đặt và cấu hình trên máy local:
@@ -24,9 +32,9 @@ Trước khi bắt đầu workshop này, hãy đảm bảo các công cụ sau �
 
 + Ứng dụng frontend được xây dựng bằng React và Vite.
 
-+ Antigravity có thể được sử dụng để chỉnh sửa source code frontend và các file tài liệu.
-
 + Cần có trình duyệt web để truy cập website đã deploy bằng CloudFront và kiểm thử ứng dụng.
+
+---
 
 #### Thư mục dự án trên máy local
 
@@ -46,14 +54,17 @@ npm run build
 
 Sau khi quá trình build hoàn tất, các file production sẽ được tạo trong thư mục `dist`.
 
+---
+
 #### Quyền IAM
 
-IAM user hoặc role được sử dụng trong workshop này cần có quyền để tạo, cấu hình, deploy, kiểm thử và dọn dẹp các dịch vụ AWS được sử dụng bởi dự án AI AWS Architecture Reviewer.
+IAM user hoặc role được sử dụng trong workshop này cần có quyền để tạo, cấu hình, deploy, kiểm thử và dọn dẹp các dịch vụ AWS được sử dụng bởi dự án **AI AWS Architecture Reviewer**.
 
 Các dịch vụ AWS cần sử dụng bao gồm:
 
 + Amazon S3,
 + Amazon CloudFront,
++ AWS WAF,
 + Amazon API Gateway,
 + AWS Lambda,
 + Amazon DynamoDB,
@@ -64,9 +75,13 @@ Các dịch vụ AWS cần sử dụng bao gồm:
 + Amazon CloudWatch,
 + IAM.
 
-#### Tài nguyên Frontend Hosting
+AWS WAF được sử dụng để bảo vệ CloudFront distribution của frontend. Vì vậy, tài khoản triển khai cần có quyền xem, tạo hoặc quản lý Web ACL, protection pack và managed rule groups nếu thực hiện cấu hình WAF trong workshop.
 
-Ứng dụng frontend được deploy bằng Amazon S3 và Amazon CloudFront.
+---
+
+#### Tài nguyên Frontend Hosting và Protection
+
+Ứng dụng frontend được deploy bằng Amazon S3, Amazon CloudFront và được bảo vệ bằng AWS WAF.
 
 S3 frontend bucket được sử dụng để lưu các file React production build:
 
@@ -74,16 +89,7 @@ S3 frontend bucket được sử dụng để lưu các file React production bu
 ai-aws-reviewer-frontend-tiersteam
 ```
 
-![S3 React App](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-frontend-tiersteam.png)
-![S3 React App Policy](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-frontend-tiersteam-policy.png)
-
 CloudFront distribution được sử dụng để phân phối website đến người dùng.
-
-Lệnh deploy frontend là:
-
-```text
-aws s3 sync dist s3://ai-aws-reviewer-frontend-tiersteam --delete
-```
 
 CloudFront domain đã deploy là:
 
@@ -91,10 +97,11 @@ CloudFront domain đã deploy là:
 https://d9353ayez9zar.cloudfront.net
 ```
 
-![CloudFront](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront.png)
-![CloudFront](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-2.png)
-![CloudFront](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-3.png)
-![CloudFront](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-4.png)
+Lệnh deploy frontend là:
+
+```text
+aws s3 sync dist s3://ai-aws-reviewer-frontend-tiersteam --delete
+```
 
 Sau khi upload bản build mới, cần tạo CloudFront invalidation:
 
@@ -103,6 +110,20 @@ Sau khi upload bản build mới, cần tạo CloudFront invalidation:
 ```
 
 Điều này đảm bảo CloudFront sẽ phục vụ phiên bản mới nhất của ứng dụng React.
+
+AWS WAF được gắn với CloudFront distribution để bổ sung lớp bảo vệ cho frontend. WAF protection pack hoặc Web ACL được dùng để áp dụng các managed rule groups nhằm theo dõi, phát hiện và giảm thiểu các request có nguy cơ độc hại trước khi chúng truy cập vào ứng dụng.
+
+Các managed rule groups được sử dụng gồm:
+
+```text
+AWSManagedRulesAmazonIpReputationList
+AWSManagedRulesCommonRuleSet
+AWSManagedRulesKnownBadInputsRuleSet
+```
+
+Trong giai đoạn kiểm thử, các rule có thể được chạy ở **Count mode** để theo dõi request trước khi chuyển sang chế độ chặn thực tế.
+
+---
 
 #### Tài nguyên Backend API
 
@@ -125,8 +146,7 @@ GET /reviews/{reviewId}/status
 
 Các routes này được tích hợp với Lambda Upload Service.
 
-![API Gateway](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-api.png)
-![API Gateway](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-api-cors.png)
+---
 
 #### Tài nguyên lưu trữ
 
@@ -144,8 +164,6 @@ Các diagram được upload sẽ được lưu theo cấu trúc key sau:
 uploads/{reviewId}/{fileName}
 ```
 
-![S3 Input](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-input-bucket-tiersteam.png)
-
 DynamoDB table lưu review metadata và review history:
 
 ```text
@@ -158,7 +176,7 @@ Partition key là:
 reviewId
 ```
 
-![DynamoDB](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/AIArchitectureReviews.png)
+---
 
 #### Lambda Upload Service
 
@@ -180,8 +198,6 @@ Function này xử lý các nhiệm vụ sau:
 + Trả review information về frontend
 + Truy xuất review history và review status
 
-![Lambda](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service.png)
-
 Các Lambda environment variables cần có là:
 
 ```text
@@ -191,7 +207,7 @@ MAX_FILE_SIZE_MB = 5
 ALLOWED_ORIGINS = http://localhost:5173,https://d9353ayez9zar.cloudfront.net
 ```
 
-![Lambda Configuration](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service-env.png)
+---
 
 #### File kiểm thử
 
@@ -230,5 +246,3 @@ Response ví dụ:
   "message": "Upload successful"
 }
 ```
-
-![Lambda test file](/WorkBlog-template/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service-test-files.png)

@@ -12,21 +12,21 @@ pre: " <b> 5. </b> "
 
 **AI AWS Architecture Reviewer** là một nền tảng web serverless cho phép người dùng upload sơ đồ kiến trúc AWS và nhận kết quả đánh giá kiến trúc có hỗ trợ bởi AI dựa trên **AWS Well-Architected Framework**.
 
-Trong workshop này, hệ thống được triển khai theo từng giai đoạn, bắt đầu từ phát triển frontend, triển khai website React lên Amazon S3 và Amazon CloudFront, xây dựng backend upload bằng Amazon API Gateway và AWS Lambda, lưu trữ sơ đồ kiến trúc bằng Amazon S3, lưu metadata và trạng thái review bằng Amazon DynamoDB, sau đó mở rộng sang workflow xử lý tự động bằng Amazon EventBridge và AWS Step Functions.
+Trong workshop này, hệ thống được triển khai theo từng giai đoạn, bắt đầu từ phát triển frontend, triển khai website React lên Amazon S3, phân phối website bằng Amazon CloudFront và bảo vệ frontend bằng AWS WAF. Sau đó, hệ thống tiếp tục được xây dựng với backend upload bằng Amazon API Gateway và AWS Lambda, lưu trữ sơ đồ kiến trúc bằng Amazon S3, lưu metadata và trạng thái review bằng Amazon DynamoDB, rồi mở rộng sang workflow xử lý tự động bằng Amazon EventBridge và AWS Step Functions.
 
 Ở giai đoạn xử lý AI, hệ thống sử dụng AWS Lambda AI Analyze để đọc sơ đồ đã upload từ Amazon S3 Input Bucket. Lambda AI Analyze gửi diagram sang Amazon Bedrock để Bedrock nhận diện các AWS services, connections, text notes và sinh ra architecture JSON có cấu trúc. Sau đó, architecture JSON được gửi sang AWS Lambda Cost Tool để ước tính chi phí hàng tháng. Kết quả ước tính chi phí cùng với architecture JSON tiếp tục được gửi lại sang Amazon Bedrock để đánh giá tổng thể kiến trúc theo AWS Well-Architected Framework, giải thích chi phí và đề xuất tối ưu.
 
-Sau khi hoàn tất phân tích, AWS Lambda PDF Generator tạo báo cáo PDF từ kết quả đánh giá cuối cùng, lưu báo cáo vào Amazon S3 Report Bucket và cập nhật review history trong Amazon DynamoDB. Amazon CloudWatch được sử dụng để ghi log, theo dõi metrics và tạo alarm cho các thành phần quan trọng như Lambda, API Gateway, Step Functions, EventBridge và DynamoDB. Khi có lỗi quan trọng ảnh hưởng đến hệ thống, CloudWatch Alarm sẽ gửi cảnh báo đến Amazon SNS Topic. Amazon SNS sau đó phân phối email cảnh báo đến các địa chỉ đã đăng ký và xác nhận subscription. Amazon CloudWatch được sử dụng để ghi log, giám sát và hỗ trợ troubleshooting. AWS IAM được sử dụng để kiểm soát quyền truy cập giữa các dịch vụ theo nguyên tắc least privilege access.
+Sau khi hoàn tất phân tích, AWS Lambda PDF Generator tạo báo cáo PDF từ kết quả đánh giá cuối cùng, lưu báo cáo vào Amazon S3 Report Bucket và cập nhật review history trong Amazon DynamoDB. Amazon CloudWatch được sử dụng để ghi logs, theo dõi metrics và tạo alarms cho các thành phần quan trọng như Lambda, API Gateway, Step Functions, EventBridge và DynamoDB. Khi có lỗi quan trọng ảnh hưởng đến hệ thống, CloudWatch Alarm sẽ gửi cảnh báo đến Amazon SNS Topic. Amazon SNS sau đó phân phối email cảnh báo đến các địa chỉ đã đăng ký và xác nhận subscription. AWS IAM được sử dụng để kiểm soát quyền truy cập giữa các dịch vụ theo nguyên tắc least privilege access. AWS WAF được gắn với CloudFront distribution để bảo vệ frontend khỏi các request có nguy cơ độc hại.
 
-Dự án sử dụng các dịch vụ AWS chính gồm: **Amazon S3, Amazon CloudFront, Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Amazon EventBridge, AWS Step Functions, Amazon Bedrock, Amazon SNS, Amazon CloudWatch và AWS IAM**.
+Dự án sử dụng các dịch vụ AWS chính gồm: **Amazon S3, Amazon CloudFront, AWS WAF, Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Amazon EventBridge, AWS Step Functions, Amazon Bedrock, Amazon SNS, Amazon CloudWatch và AWS IAM**.
 
-Mục tiêu chính của workshop là ghi lại quá trình triển khai website và backend services, giải thích cách cấu hình từng dịch vụ AWS, đồng thời hoàn thiện workflow đánh giá kiến trúc AWS bằng AI, bao gồm diagram analysis, architecture JSON generation, cost estimation, final architecture review, PDF report generation, CloudWatch monitoring, SNS alert notification và security.
+Mục tiêu chính của workshop là ghi lại quá trình triển khai website và backend services, giải thích cách cấu hình từng dịch vụ AWS, đồng thời hoàn thiện workflow đánh giá kiến trúc AWS bằng AI, bao gồm frontend hosting, frontend protection with AWS WAF, diagram analysis, architecture JSON generation, cost estimation, final architecture review, PDF report generation, CloudWatch monitoring, SNS alert notification và security.
 
 ---
 
 #### Kiến trúc tổng thể của hệ thống
 
-Kiến trúc của **AI AWS Architecture Reviewer** được thiết kế theo mô hình **serverless event-driven architecture**. Người dùng truy cập ứng dụng web thông qua Amazon CloudFront. Frontend React được lưu trữ trong Amazon S3 Static Website bucket và được phân phối thông qua CloudFront để cải thiện hiệu năng truy cập.
+Kiến trúc của **AI AWS Architecture Reviewer** được thiết kế theo mô hình **serverless event-driven architecture**. Người dùng truy cập ứng dụng web thông qua Amazon CloudFront được bảo vệ bởi AWS WAF. Frontend React được lưu trữ trong Amazon S3 frontend bucket và được phân phối thông qua CloudFront để cải thiện hiệu năng truy cập. AWS WAF được gắn với CloudFront distribution để kiểm tra request, theo dõi các request đáng ngờ và giảm thiểu các request có nguy cơ độc hại trước khi chúng truy cập vào frontend.
 
 Khi người dùng upload sơ đồ kiến trúc AWS, request được gửi từ frontend đến Amazon API Gateway. API Gateway chuyển request đến AWS Lambda Upload Service. Lambda Upload Service kiểm tra file upload, tạo review ID, lưu sơ đồ vào Amazon S3 Input Bucket và ghi metadata ban đầu vào Amazon DynamoDB Review Database.
 
@@ -40,7 +40,7 @@ Tiếp theo, architecture JSON và cost estimation result được gửi lại s
 
 Sau khi final AI review hoàn tất, AWS Lambda PDF Generator tạo báo cáo PDF từ kết quả phân tích. Báo cáo được lưu vào Amazon S3 Report Bucket. Lambda PDF Generator cũng cập nhật review history, review status và report information vào Amazon DynamoDB. Amazon SNS không được sử dụng để gửi email khi từng review hoàn tất. Thay vào đó, Amazon SNS được tích hợp với Amazon CloudWatch Alarm để gửi email cảnh báo vận hành khi hệ thống phát sinh lỗi, ví dụ Step Functions failed, Lambda error, API Gateway 5XX, DynamoDB throttling hoặc EventBridge failed invocation.
 
-![AI AWS Architecture Reviewer Workshop](/WorkBlog-template/images/5-Workshop/ai-aws-architecture-reviewer.png)
+![AI AWS Architecture Reviewer Workshop](/WorkBlog-template/images/5-Workshop/ai-aws-architecture-reviewer.jpg)
 
 ---
 
@@ -49,22 +49,66 @@ Sau khi final AI review hoàn tất, AWS Lambda PDF Generator tạo báo cáo PD
 Luồng hoạt động của hệ thống gồm các bước sau:
 
 1. User truy cập web application thông qua Amazon CloudFront.
-2. Amazon CloudFront phân phối React frontend từ Amazon S3 Static Website bucket.
-3. User submit architecture diagram thông qua frontend.
-4. Amazon API Gateway nhận upload request và gửi request đến AWS Lambda Upload Service.
-5. AWS Lambda Upload Service validate upload request và lưu uploaded diagram vào Amazon S3 Input Bucket.
-6. Amazon S3 publish Object Created Event sau khi diagram được upload thành công.
-7. Amazon EventBridge nhận event và khởi động AWS Step Functions Review Workflow.
-8. AWS Step Functions điều phối workflow và gọi AWS Lambda AI Analyze để xử lý diagram.
-9. AWS Lambda AI Analyze gửi uploaded diagram sang Amazon Bedrock để Bedrock nhận diện AWS services, connections, text notes và sinh architecture JSON.
-10. AWS Lambda AI Analyze gửi architecture JSON sang AWS Lambda Cost Tool để ước tính monthly cost.
-11. AWS Lambda Cost Tool gửi cost estimation result cùng với architecture JSON sang Amazon Bedrock để đánh giá toàn bộ kiến trúc, giải thích chi phí và đề xuất tối ưu.
-12. AWS Lambda PDF Generator tạo PDF report từ kết quả final AI review.
-13. AWS Lambda PDF Generator cập nhật review history và review status vào Amazon DynamoDB Review Database.
-14. AWS Lambda PDF Generator lưu generated PDF report vào Amazon S3 Report Bucket.
-15. Amazon CloudWatch ghi logs, theo dõi metrics và tạo alarms cho các thành phần quan trọng như Lambda, API Gateway, Step Functions, EventBridge và DynamoDB.
-16. Khi CloudWatch Alarm phát hiện lỗi quan trọng trong hệ thống, alarm sẽ gửi cảnh báo đến Amazon SNS Topic.
-17. Amazon SNS gửi email cảnh báo lỗi đến các địa chỉ email đã đăng ký và xác nhận subscription.
+2. AWS WAF được gắn với CloudFront distribution để kiểm tra request và bảo vệ frontend.
+3. Amazon CloudFront phân phối React frontend từ Amazon S3 frontend bucket.
+4. User submit architecture diagram thông qua frontend.
+5. Amazon API Gateway nhận upload request và gửi request đến AWS Lambda Upload Service.
+6. AWS Lambda Upload Service validate upload request và lưu uploaded diagram vào Amazon S3 Input Bucket.
+7. Amazon S3 publish Object Created Event sau khi diagram được upload thành công.
+8. Amazon EventBridge nhận event và khởi động AWS Step Functions Review Workflow.
+9. AWS Step Functions điều phối workflow và gọi AWS Lambda AI Analyze để xử lý diagram.
+10. AWS Lambda AI Analyze gửi uploaded diagram sang Amazon Bedrock để Bedrock nhận diện AWS services, connections, text notes và sinh architecture JSON.
+11. AWS Lambda AI Analyze gửi architecture JSON sang AWS Lambda Cost Tool để ước tính monthly cost.
+12. AWS Lambda Cost Tool gửi cost estimation result cùng với architecture JSON sang Amazon Bedrock để đánh giá toàn bộ kiến trúc, giải thích chi phí và đề xuất tối ưu.
+13. AWS Lambda PDF Generator tạo PDF report từ kết quả final AI review.
+14. AWS Lambda PDF Generator cập nhật review history và review status vào Amazon DynamoDB Review Database.
+15. AWS Lambda PDF Generator lưu generated PDF report vào Amazon S3 Report Bucket.
+16. Frontend hiển thị kết quả review và cho phép người dùng tải PDF report.
+17. Amazon CloudWatch ghi logs, theo dõi metrics và tạo alarms cho các thành phần quan trọng như Lambda, API Gateway, Step Functions, EventBridge và DynamoDB.
+18. Khi CloudWatch Alarm phát hiện lỗi quan trọng trong hệ thống, alarm sẽ gửi cảnh báo đến Amazon SNS Topic.
+19. Amazon SNS gửi email cảnh báo lỗi đến các địa chỉ email đã đăng ký và xác nhận subscription.
+
+Luồng frontend protection:
+
+```text
+User
+→ AWS WAF
+→ Amazon CloudFront
+→ Amazon S3 Frontend Bucket
+→ React Application
+```
+
+Luồng review chính:
+
+```text
+User
+→ AWS WAF
+→ Amazon CloudFront
+→ S3 React Frontend
+→ API Gateway
+→ Lambda Upload Service
+→ S3 Input Bucket
+→ EventBridge
+→ Step Functions
+→ Lambda AI Analyze
+→ Amazon Bedrock sinh architecture JSON
+→ Lambda Cost Tool ước tính monthly cost
+→ Amazon Bedrock đánh giá tổng thể kiến trúc và tối ưu chi phí
+→ Lambda PDF Generator
+→ S3 Report Bucket
+→ DynamoDB
+→ Frontend hiển thị kết quả và tải PDF
+```
+
+Luồng monitoring và cảnh báo lỗi:
+
+```text
+AWS Service Error
+→ Amazon CloudWatch Logs / Metrics
+→ CloudWatch Alarm
+→ Amazon SNS Topic
+→ Email Alert
+```
 
 ---
 
@@ -72,8 +116,9 @@ Luồng hoạt động của hệ thống gồm các bước sau:
 
 Các dịch vụ AWS chính được sử dụng trong workshop bao gồm:
 
+- **AWS WAF**: Bảo vệ CloudFront distribution khỏi các request có nguy cơ độc hại. AWS WAF được sử dụng với các managed rule groups như Amazon IP Reputation List, Common Rule Set và Known Bad Inputs Rule Set để theo dõi, phát hiện và giảm thiểu các request đáng ngờ trước khi chúng truy cập vào frontend.
 - **Amazon CloudFront**: Phân phối ứng dụng web React đến người dùng với hiệu năng tốt hơn và độ trễ thấp hơn.
-- **Amazon S3 Static Website Bucket**: Lưu trữ bản build production của React frontend, bao gồm `index.html` và các static assets.
+- **Amazon S3 Frontend Bucket**: Lưu trữ bản build production của React frontend, bao gồm `index.html` và các static assets.
 - **Amazon API Gateway**: Cung cấp các API endpoint cho upload diagram, lấy review history, xem review detail và kiểm tra review status.
 - **AWS Lambda Upload Service**: Xử lý upload request, validate file, tạo review ID, lưu diagram vào S3 Input Bucket và ghi metadata vào DynamoDB.
 - **Amazon S3 Input Bucket**: Lưu trữ các sơ đồ kiến trúc AWS gốc do người dùng upload.
@@ -103,7 +148,7 @@ Các phần sau đã được triển khai trong dự án:
    - Xử lý routing bằng React Router.
    - Chuẩn bị giao diện hiển thị review status, review history và review detail.
 
-2. **Triển khai Frontend bằng Amazon S3 và Amazon CloudFront**
+2. **Triển khai Frontend bằng Amazon S3, Amazon CloudFront và AWS WAF**
    - Tạo S3 bucket để lưu bản build production của React.
    - Build frontend bằng lệnh `npm run build`.
    - Upload nội dung thư mục `dist` lên Amazon S3.
@@ -114,6 +159,8 @@ Các phần sau đã được triển khai trong dự án:
    - Cấu hình custom error responses cho React Router:
      - 403 → `/index.html` → 200
      - 404 → `/index.html` → 200
+   - Cấu hình AWS WAF cho CloudFront distribution để bảo vệ frontend khỏi các request có nguy cơ độc hại.
+   - Sử dụng AWS managed rule groups như Amazon IP Reputation List, Common Rule Set và Known Bad Inputs Rule Set.
    - Tạo CloudFront invalidation sau mỗi lần deploy frontend để tránh việc CloudFront vẫn phục vụ bản build cũ.
 
 3. **Xây dựng Upload Backend**
@@ -199,7 +246,7 @@ Các phần sau sẽ được triển khai ở giai đoạn tiếp theo của d�
    - Nhận architecture JSON từ Lambda AI Analyze.
    - Đọc danh sách AWS services được phát hiện trong sơ đồ.
    - Gán usage assumptions mặc định cho từng dịch vụ ở mức demo.
-   - Ước tính monthly cost cho các dịch vụ chính như S3, CloudFront, API Gateway, Lambda, DynamoDB, EventBridge, Step Functions, Bedrock, SNS và CloudWatch.
+   - Ước tính monthly cost cho các dịch vụ chính như S3, CloudFront, AWS WAF, API Gateway, Lambda, DynamoDB, EventBridge, Step Functions, Bedrock, SNS và CloudWatch.
    - Tạo cost estimation result gồm:
      - Service name.
      - Usage assumption.
@@ -273,19 +320,11 @@ Các phần sau sẽ được triển khai ở giai đoạn tiếp theo của d�
    - Giới hạn quyền truy cập S3 theo đúng Lambda function cần sử dụng.
    - Giới hạn quyền DynamoDB theo table cụ thể.
    - Giới hạn quyền Bedrock invoke model cho Lambda cần gọi AI.
+   - Cấu hình AWS WAF cho CloudFront distribution để bảo vệ frontend khỏi các request có nguy cơ độc hại.
+   - Theo dõi AWS WAF sampled requests để kiểm tra request hợp lệ có bị rule match hay không.
+   - Cấu hình rule ở Count mode trong giai đoạn kiểm thử trước khi chuyển sang Block mode nếu cần.
    - Thêm retry logic và error handling trong Step Functions.
    - Cập nhật DynamoDB review status khi workflow bị lỗi.
-
-9. **Clean up**
-   - Xóa các file test trong S3 Input Bucket.
-   - Xóa các file PDF test trong S3 Report Bucket nếu không còn sử dụng.
-   - Xóa các Lambda functions test.
-   - Xóa API Gateway routes không còn sử dụng.
-   - Xóa EventBridge rules test.
-   - Xóa Step Functions workflows test.
-   - Xóa SNS topic hoặc email subscription nếu không còn dùng.
-   - Dọn dẹp CloudWatch logs nếu cần để giảm chi phí.
-   - Kiểm tra AWS Billing Dashboard để đảm bảo không còn tài nguyên phát sinh chi phí ngoài ý muốn.
 
 ---
 
@@ -294,6 +333,7 @@ Các phần sau sẽ được triển khai ở giai đoạn tiếp theo của d�
 Sau khi hoàn thành workshop, hệ thống kỳ vọng đạt được các kết quả sau:
 
 - Website React được deploy thành công lên Amazon S3 và phân phối thông qua Amazon CloudFront.
+- AWS WAF được gắn với CloudFront distribution để bảo vệ frontend khỏi các request có nguy cơ độc hại.
 - Frontend có thể upload architecture diagram thông qua API Gateway.
 - Lambda Upload Service có thể validate file, lưu diagram vào S3 Input Bucket và ghi metadata vào DynamoDB.
 - Frontend có thể hiển thị review history, review detail và review progress từ API thật.
@@ -318,7 +358,7 @@ Sau khi hoàn thành workshop, hệ thống kỳ vọng đạt được các k�
 
 1. [Tổng quan Workshop](5.1-Workshop-overview/)
 2. [Điều kiện chuẩn bị](5.2-Prerequisite/)
-3. [Triển khai React Frontend với S3 và CloudFront](5.3-Frontend-hosting/)
+3. [Triển khai React Frontend với S3, CloudFront và AWS WAF](5.3-Frontend-hosting/)
 4. [Xây dựng Upload Backend với API Gateway, Lambda, S3 và DynamoDB](5.4-Upload-backend/)
 5. [Tích hợp Review APIs và Frontend Pages](5.5-Review-api/)
 6. [Xây dựng Event-Driven AI Review Workflow](5.6-AI-workflow/)

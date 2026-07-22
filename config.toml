@@ -58,5 +58,6 @@ weight = 20
 
 [markup]
   [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.image]
+        useEmbedded = "never"
