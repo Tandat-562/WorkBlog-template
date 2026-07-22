@@ -1,12 +1,12 @@
 ---
 title: "Self-Assessment"
-date: 2026-07-10
+date: 2026-05-01
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Throughout my internship with the **First Cloud AI Journey** program from **April 18, 2026** to **July 10, 2026**, I had the opportunity to learn, develop my skills, and apply the knowledge gained at university in a practical environment.
+Throughout my internship with the **First Cloud AI Journey** program from **April 17, 2026** to **July 30, 2026**, I had the opportunity to learn, develop my skills, and apply the knowledge gained at university in a practical environment.
 
 During the internship, I studied and practiced with several important AWS service categories, including AWS Networking, Compute, Storage, Security, Database, and Generative AI. In addition, I participated in the development of the **AI AWS Architecture Reviewer** Capstone Project, a system that supports uploading, analyzing, and evaluating AWS architecture diagrams based on the AWS Well-Architected Framework.
 

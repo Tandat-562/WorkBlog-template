@@ -1,12 +1,12 @@
 ---
 title: "Tự đánh giá"
-date: 2026-07-10
+date: 2026-05-01
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong suốt thời gian thực tập tại chương trình **First Cloud AI Journey** từ ngày **18/04/2026** đến ngày **10/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng những kiến thức đã được trang bị tại trường vào môi trường thực tế.
+Trong suốt thời gian thực tập tại chương trình **First Cloud AI Journey** từ ngày **17/04/2026** đến ngày **30/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng những kiến thức đã được trang bị tại trường vào môi trường thực tế.
 
 Trong quá trình thực tập, tôi đã tìm hiểu và thực hành nhiều nhóm dịch vụ AWS quan trọng, bao gồm AWS Networking, Compute, Storage, Security, Database và Generative AI. Bên cạnh đó, tôi còn tham gia phát triển Capstone Project **AI AWS Architecture Reviewer**, một hệ thống hỗ trợ tải lên, phân tích và đánh giá sơ đồ kiến trúc AWS dựa trên AWS Well-Architected Framework.
 
