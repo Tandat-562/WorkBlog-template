@@ -1,6 +1,6 @@
 ---
 title: "Internship Report"
-date: 2024-01-01
+date: 2026-05-01
 weight: 1
 chapter: false
 ---
@@ -15,7 +15,7 @@ chapter: false
 
 &emsp; **Email:** tandat21012004@gmail.com
 
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
+&emsp; **University:** Ho Chi Minh City University of Technology 
 
 &emsp; **Major:** Information Technology
 
@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Internship Duration:** From 01/05/2026 to 01/07/2026
+&emsp; **Internship Duration:** From 17/04/2026 to 30/07/2026
 
 ![Your profile picture](/WorkBlog-template/images/avatar1.png)
 
